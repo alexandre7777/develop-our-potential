@@ -9,7 +9,7 @@ import com.alexandre.potentialgrowth.model.LearnItem
 interface LearnItemDao{
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(posts: List<LearnItem>)
+    fun insert(learnItem: LearnItem)
 
     @Query("SELECT * FROM learn_item")
     fun getAllLearnItem(): LiveData<List<LearnItem>>

@@ -9,6 +9,10 @@ import com.alexandre.potentialgrowth.model.LearnItem
  */
 class LearnItemRepo(private val learnItemDao: LearnItemDao) {
 
+    fun insert(learnItem: LearnItem) {
+        learnItemDao.insert(learnItem)
+    }
+
     /**
      * Get all learn items
      */
