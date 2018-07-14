@@ -3,14 +3,17 @@ package com.alexandre.potentialgrowth.data
 import android.arch.lifecycle.LiveData
 import com.alexandre.potentialgrowth.db.LearnItemDao
 import com.alexandre.potentialgrowth.model.LearnItem
+import java.util.concurrent.Executor
 
 /**
  * Repository class that works with local and remote data sources.
  */
-class LearnItemRepo(private val learnItemDao: LearnItemDao) {
+class LearnItemRepo(private val learnItemDao: LearnItemDao, private val ioExecutor: Executor) {
 
     fun insert(learnItem: LearnItem) {
-        learnItemDao.insert(learnItem)
+        ioExecutor.execute {
+            learnItemDao.insert(learnItem)
+        }
     }
 
     /**

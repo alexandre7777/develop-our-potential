@@ -31,7 +31,7 @@ abstract class LearnItemDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context) =
                 Room.databaseBuilder(context.applicationContext,
-                        LearnItemDatabase::class.java, "Github.db")
+                        LearnItemDatabase::class.java, "LearnRepo.db")
                         .build()
     }
 }
