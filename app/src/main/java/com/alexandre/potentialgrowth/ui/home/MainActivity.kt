@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this, Injection.provideViewModelFactory(this))
                 .get(MainActivityViewModel::class.java)
 
-        //val learnItem = LearnItem(0, "name", "description", "imgUrl")
+        val learnItem = LearnItem(0, "name", "description", "imgUrl")
 
-        //viewModel.addLearnItem(learnItem)
+        viewModel.addLearnItem(learnItem)
 
         //val learnItemResult = viewModel.getAllLearnItem()
     }

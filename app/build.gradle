@@ -45,4 +45,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation"com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
+
+    //stetho
+    debugImplementation 'com.facebook.stetho:stetho:1.5.0'
 }
