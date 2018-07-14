@@ -20,10 +20,38 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this, Injection.provideViewModelFactory(this))
                 .get(MainActivityViewModel::class.java)
 
-        val learnItem = LearnItem(0, "name", "description", "imgUrl")
+        createFakeLearnItem()
+
+        //val learnItemResult = viewModel.getAllLearnItem()
+    }
+
+    private fun createFakeLearnItem() {
+        val learnItem = LearnItem(1, "Make everyday matter", "Learn new a topic everyday, contribute to your Github everyday", "https://images.pexels.com/photos/888992/pexels-photo-888992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
 
         viewModel.addLearnItem(learnItem)
 
-        //val learnItemResult = viewModel.getAllLearnItem()
+        val learnItem2 = LearnItem(2, "Calm your emotions", "description", "imgUrl")
+
+        viewModel.addLearnItem(learnItem2)
+
+        val learnItem3 = LearnItem(3, "Calm others people emotions", "description", "imgUrl")
+
+        viewModel.addLearnItem(learnItem3)
+
+        val learnItem4 = LearnItem(4, "Understand rather than be understood", "description", "imgUrl")
+
+        viewModel.addLearnItem(learnItem4)
+
+        val learnItem5 = LearnItem(5, "Made him understand that you understood it by reformulating", "description", "imgUrl")
+
+        viewModel.addLearnItem(learnItem5)
+
+        val learnItem6 = LearnItem(6, "Juxtapose your point of view to his rather than oppose it", "description", "imgUrl")
+
+        viewModel.addLearnItem(learnItem6)
+
+        val learnItem7 = LearnItem(7, "Propose a solution", "description", "imgUrl")
+
+        viewModel.addLearnItem(learnItem7)
     }
 }
