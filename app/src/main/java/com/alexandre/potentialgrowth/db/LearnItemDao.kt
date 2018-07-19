@@ -13,6 +13,9 @@ interface LearnItemDao{
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(learnItem: LearnItem)
 
+    @Insert
+    fun insertAll(learnItems: List<LearnItem>)
+
     @Query("SELECT idLearnItem, name, description, imgUrl FROM learn_item")
     fun getAllLearnItem(): LiveData<List<LearnItem>>
 }

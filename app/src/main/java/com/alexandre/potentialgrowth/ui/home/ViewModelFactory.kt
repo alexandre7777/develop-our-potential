@@ -14,6 +14,6 @@ class ViewModelFactory(private val repository: LearnItemRepo) : ViewModelProvide
             @Suppress("UNCHECKED_CAST")
             return MainActivityViewModel(repository) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+        throw IllegalArgumentException("Unknown ViewModel class") as Throwable
     }
 }
