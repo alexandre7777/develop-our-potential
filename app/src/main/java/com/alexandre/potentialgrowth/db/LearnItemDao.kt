@@ -18,4 +18,7 @@ interface LearnItemDao{
 
     @Query("SELECT idLearnItem, name, description, imgUrl FROM learn_item")
     fun getAllLearnItem(): LiveData<List<LearnItem>>
+
+    @Query("SELECT idLearnItem, name, description, imgUrl FROM learn_item WHERE idLearnItem = :id")
+    fun getLearnItem(id : Long): LiveData<LearnItem>
 }

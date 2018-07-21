@@ -1,8 +1,6 @@
 package com.alexandre.potentialgrowth.data
 
 import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.util.Log
 import com.alexandre.potentialgrowth.db.LearnItemDao
 import com.alexandre.potentialgrowth.model.LearnItem
 import java.util.concurrent.Executor
@@ -23,5 +21,9 @@ class LearnItemRepo(private val learnItemDao: LearnItemDao, private val ioExecut
      */
     fun getAllLearnItem(): LiveData<List<LearnItem>> {
         return learnItemDao.getAllLearnItem()
+    }
+
+    fun getLearnItemById(id : Long): LiveData<LearnItem> {
+        return learnItemDao.getLearnItem(id)
     }
 }

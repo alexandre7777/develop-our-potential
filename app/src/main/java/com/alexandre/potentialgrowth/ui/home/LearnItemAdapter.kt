@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.alexandre.potentialgrowth.model.LearnItem
 
-class LearnItemAdapter : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
+class LearnItemAdapter(val listener: (LearnItem) -> Unit) : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return LearnItemViewHolder.create(parent)
@@ -15,7 +15,7 @@ class LearnItemAdapter : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_CO
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val repoItem = getItem(position)
         if (repoItem != null) {
-            (holder as LearnItemViewHolder).bind(repoItem)
+            (holder as LearnItemViewHolder).bind(repoItem, listener)
         }
     }
 
