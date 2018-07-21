@@ -17,7 +17,7 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private var learnItem: LearnItem? = null
 
-    fun bind(learnItem: LearnItem?) {
+    fun bind(learnItem: LearnItem?, listener: (LearnItem) -> Unit) {
         if (learnItem == null) {
             /*val resources = itemView.resources
             name.text = resources.getString(R.string.loading)
@@ -26,15 +26,21 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             stars.text = resources.getString(R.string.unknown)
             forks.text = resources.getString(R.string.unknown)*/
         } else {
-            showRepoData(learnItem)
+            showRepoData(learnItem, listener)
         }
     }
 
-    private fun showRepoData(learnItem: LearnItem) {
+    private fun showRepoData(learnItem: LearnItem, listener: (LearnItem) -> Unit) {
         this.learnItem = learnItem
         name.text = learnItem.name
         description.text = learnItem.description
         Glide.with(img.context).load(learnItem.imgUrl).into(img)
+
+        this.itemView.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                listener(learnItem)
+            }
+        })
     }
 
     companion object {

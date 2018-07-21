@@ -4,7 +4,8 @@ import android.arch.lifecycle.ViewModelProvider
 import android.content.Context
 import com.alexandre.potentialgrowth.data.LearnItemRepo
 import com.alexandre.potentialgrowth.db.LearnItemDatabase
-import com.alexandre.potentialgrowth.ui.home.ViewModelFactory
+import com.alexandre.potentialgrowth.ui.detail.ViewModelFactoryDetail
+import com.alexandre.potentialgrowth.ui.home.ViewModelFactoryHome
 import java.util.concurrent.Executors
 
 object Injection{
@@ -22,7 +23,15 @@ object Injection{
      * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
      * [ViewModel] objects.
      */
-    fun provideViewModelFactory(context: Context): ViewModelProvider.Factory {
-        return ViewModelFactory(provideLearnItemRepo(context))
+    fun provideViewModelFactoryHome(context: Context): ViewModelProvider.Factory {
+        return ViewModelFactoryHome(provideLearnItemRepo(context))
+    }
+
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
+    fun provideViewModelFactoryDetail(context: Context, idLearnItem: Long): ViewModelProvider.Factory {
+        return ViewModelFactoryDetail(provideLearnItemRepo(context), idLearnItem)
     }
 }

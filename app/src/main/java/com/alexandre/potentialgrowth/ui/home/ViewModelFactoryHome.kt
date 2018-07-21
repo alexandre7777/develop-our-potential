@@ -7,7 +7,7 @@ import com.alexandre.potentialgrowth.data.LearnItemRepo
 /**
  * Factory for ViewModels
  */
-class ViewModelFactory(private val repository: LearnItemRepo) : ViewModelProvider.Factory {
+class ViewModelFactoryHome(private val repository: LearnItemRepo) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
