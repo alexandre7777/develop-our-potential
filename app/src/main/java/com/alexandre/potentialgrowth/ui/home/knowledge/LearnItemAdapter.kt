@@ -1,4 +1,4 @@
-package com.alexandre.potentialgrowth.ui.home
+package com.alexandre.potentialgrowth.ui.home.knowledge
 
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil

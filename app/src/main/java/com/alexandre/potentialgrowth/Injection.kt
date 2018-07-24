@@ -5,7 +5,7 @@ import android.content.Context
 import com.alexandre.potentialgrowth.data.LearnItemRepo
 import com.alexandre.potentialgrowth.db.LearnItemDatabase
 import com.alexandre.potentialgrowth.ui.detail.ViewModelFactoryDetail
-import com.alexandre.potentialgrowth.ui.home.ViewModelFactoryHome
+import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
 import java.util.concurrent.Executors
 
 object Injection{
@@ -24,7 +24,7 @@ object Injection{
      * [ViewModel] objects.
      */
     fun provideViewModelFactoryHome(context: Context): ViewModelProvider.Factory {
-        return ViewModelFactoryHome(provideLearnItemRepo(context))
+        return ViewModelFactoryKnowledge(provideLearnItemRepo(context))
     }
 
     /**

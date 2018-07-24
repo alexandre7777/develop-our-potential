@@ -12,8 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
         android:name=".application.PotentialGrowthApplicaiton">
-        <activity android:name=".ui.home.MainActivity">
-        </activity>
         <activity android:name=".ui.detail.DetailActivity" />
         <activity android:name=".ui.home.HomeActivity" >
         <intent-filter>
