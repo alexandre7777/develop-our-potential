@@ -1,5 +1,7 @@
 package com.alexandre.potentialgrowth.ui.home.knowledge
 
+import android.support.constraint.ConstraintLayout
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,8 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val name: TextView = view.findViewById(R.id.name)
     private val description: TextView = view.findViewById(R.id.description)
     private val img: ImageView = view.findViewById(R.id.img)
+    private val container: ConstraintLayout = view.findViewById(R.id.container)
+
 
     private var learnItem: LearnItem? = null
 
@@ -35,6 +39,16 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         name.text = learnItem.name
         description.text = learnItem.description
         Glide.with(img.context).load(learnItem.imgUrl).into(img)
+
+        when (learnItem.idType){
+            1 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.communication))
+            2 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.life_style))
+            3 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.self_confidence))
+            4 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.health))
+            5 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.find_yourself))
+        }
+
+
 
         this.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

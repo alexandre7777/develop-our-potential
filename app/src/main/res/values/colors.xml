@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="life_style">#ee4035</color>
+    <color name="communication">#0392cf</color>
+    <color name="self_confidence">#fdf498</color>
+    <color name="health">#7bc043</color>
+    <color name="find_yourself">#FFFFFF</color>
 </resources>

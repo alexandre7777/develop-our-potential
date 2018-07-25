@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.support.v4.app.Fragment;
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.ViewGroup
@@ -54,7 +55,7 @@ class KnowledgeFragment : Fragment(){
 
 
     private fun initAdapter(){
-        list.layoutManager = LinearLayoutManager(activity?.applicationContext)
+        list.layoutManager = GridLayoutManager(activity?.applicationContext, 2)
         list.adapter = adapter
 
 
