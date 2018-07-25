@@ -8,5 +8,6 @@
     <color name="communication">#0392cf</color>
     <color name="self_confidence">#fdf498</color>
     <color name="health">#7bc043</color>
-    <color name="find_yourself">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

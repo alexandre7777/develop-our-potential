@@ -38,14 +38,38 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         this.learnItem = learnItem
         name.text = learnItem.name
         description.text = learnItem.description
-        Glide.with(img.context).load(learnItem.imgUrl).into(img)
 
         when (learnItem.idType){
-            1 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.communication))
-            2 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.life_style))
-            3 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.self_confidence))
-            4 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.health))
-            5 -> container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.find_yourself))
+            1 -> {
+                container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.communication))
+                img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.people))
+                name.setTextColor(ContextCompat.getColor(container.context, R.color.white))
+                description.setTextColor(ContextCompat.getColor(container.context, R.color.white))
+            }
+            2 -> {
+                container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.life_style))
+                img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.thumb_up))
+                name.setTextColor(ContextCompat.getColor(container.context, R.color.white))
+                description.setTextColor(ContextCompat.getColor(container.context, R.color.white))
+            }
+            3 -> {
+                container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.self_confidence))
+                img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.smile))
+                name.setTextColor(ContextCompat.getColor(container.context, R.color.black))
+                description.setTextColor(ContextCompat.getColor(container.context, R.color.black))
+            }
+            4 -> {
+                container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.health))
+                img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.heart))
+                name.setTextColor(ContextCompat.getColor(container.context, R.color.black))
+                description.setTextColor(ContextCompat.getColor(container.context, R.color.black))
+            }
+            5 -> {
+                container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.white))
+                img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.cake))
+                name.setTextColor(ContextCompat.getColor(container.context, R.color.black))
+                description.setTextColor(ContextCompat.getColor(container.context, R.color.black))
+            }
         }
 
 
