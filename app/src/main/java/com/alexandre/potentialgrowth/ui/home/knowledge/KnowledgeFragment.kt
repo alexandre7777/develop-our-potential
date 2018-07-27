@@ -1,12 +1,15 @@
 package com.alexandre.potentialgrowth.ui.home.knowledge
 
+import android.app.Activity
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.support.v4.app.Fragment;
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
+import android.support.v4.util.Pair
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.ViewGroup
 import android.view.LayoutInflater
@@ -24,11 +27,28 @@ class KnowledgeFragment : Fragment(){
 
     private lateinit var viewModel: KnowledgeFragmentViewModel
 
-    private val adapter = LearnItemAdapter() {
+    private val adapter = LearnItemAdapter() { view: View?, learnItem: LearnItem ->
         val intent = Intent(activity, DetailActivity::class.java).apply {
-            putExtra(INTENT_DETAIL_EXTRA, it.idLearnItem)
+            putExtra(INTENT_DETAIL_EXTRA, learnItem.idLearnItem)
         }
-        startActivity(intent)
+
+        val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                activity as Activity,
+
+                // Now we provide a list of Pair items which contain the view we can transitioning
+                // from, and the name of the view it is transitioning to, in the launched activity
+                Pair<View, String>(view?.findViewById(R.id.img),
+                        DetailActivity().VIEW_NAME_TYPE_IMAGE),
+                Pair<View, String>(view?.findViewById(R.id.container),
+                        DetailActivity().VIEW_NAME_CONTAINER_BACKGROUND),
+                Pair<View, String>(view?.findViewById(R.id.name),
+                        DetailActivity().VIEW_NAME_TEXT_TITLE),
+                Pair<View, String>(view?.findViewById(R.id.description),
+                        DetailActivity().VIEW_NAME_TEXT_DESCRIPTION))
+
+
+
+        ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

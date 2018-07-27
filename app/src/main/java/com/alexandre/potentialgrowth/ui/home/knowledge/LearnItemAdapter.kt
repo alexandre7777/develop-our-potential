@@ -3,10 +3,11 @@ package com.alexandre.potentialgrowth.ui.home.knowledge
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import android.view.ViewGroup
 import com.alexandre.potentialgrowth.model.LearnItem
 
-class LearnItemAdapter(val listener: (LearnItem) -> Unit) : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
+class LearnItemAdapter(val listener: (View?, LearnItem) -> Unit) : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return LearnItemViewHolder.create(parent)

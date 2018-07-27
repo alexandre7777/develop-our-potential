@@ -21,7 +21,7 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private var learnItem: LearnItem? = null
 
-    fun bind(learnItem: LearnItem?, listener: (LearnItem) -> Unit) {
+    fun bind(learnItem: LearnItem?, listener: (View?, LearnItem) -> Unit) {
         if (learnItem == null) {
             /*val resources = itemView.resources
             name.text = resources.getString(R.string.loading)
@@ -34,7 +34,7 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
     }
 
-    private fun showRepoData(learnItem: LearnItem, listener: (LearnItem) -> Unit) {
+    private fun showRepoData(learnItem: LearnItem, listener: (View?, LearnItem) -> Unit) {
         this.learnItem = learnItem
         name.text = learnItem.name
         description.text = learnItem.description
@@ -76,7 +76,7 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         this.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                listener(learnItem)
+                listener(v, learnItem)
             }
         })
     }
