@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.activity_detail.*
-
 
 class DetailActivity : AppCompatActivity() {
 
@@ -23,6 +23,8 @@ class DetailActivity : AppCompatActivity() {
 
     public val VIEW_NAME_TEXT_DESCRIPTION = "detail:text:description"
 
+    public val VIEW_NAME_APPBARLAYOUT = "detail:nav:appbarlayout"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -35,8 +37,9 @@ class DetailActivity : AppCompatActivity() {
         ViewCompat.setTransitionName(description, VIEW_NAME_TEXT_DESCRIPTION)
         ViewCompat.setTransitionName(img, VIEW_NAME_TYPE_IMAGE)
         ViewCompat.setTransitionName(container, VIEW_NAME_CONTAINER_BACKGROUND)
+        ViewCompat.setTransitionName(appBarLayout, VIEW_NAME_APPBARLAYOUT)
 
-        val id = intent.getLongExtra("intentdetailextrakey", 1)
+        val id = intent.getLongExtra(KnowledgeFragment().INTENT_DETAIL_EXTRA, 1)
 
         viewModel = ViewModelProviders.of(this, Injection.provideViewModelFactoryDetail(this, id))
                 .get(DetailActivityViewModel::class.java)

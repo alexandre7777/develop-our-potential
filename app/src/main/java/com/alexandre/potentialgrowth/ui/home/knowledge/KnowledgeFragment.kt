@@ -43,6 +43,8 @@ class KnowledgeFragment : Fragment(){
                         DetailActivity().VIEW_NAME_CONTAINER_BACKGROUND),
                 Pair<View, String>(view?.findViewById(R.id.name),
                         DetailActivity().VIEW_NAME_TEXT_TITLE),
+                Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
+                        DetailActivity().VIEW_NAME_APPBARLAYOUT),
                 Pair<View, String>(view?.findViewById(R.id.description),
                         DetailActivity().VIEW_NAME_TEXT_DESCRIPTION))
 
