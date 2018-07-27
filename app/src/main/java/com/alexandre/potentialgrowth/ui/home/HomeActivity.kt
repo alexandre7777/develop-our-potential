@@ -20,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         setupViewPager(viewPager);
 

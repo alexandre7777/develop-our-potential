@@ -3,13 +3,11 @@ package com.alexandre.potentialgrowth.ui.detail
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
-import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
 
 
@@ -28,6 +26,10 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         ViewCompat.setTransitionName(name, VIEW_NAME_TEXT_TITLE)
         ViewCompat.setTransitionName(description, VIEW_NAME_TEXT_DESCRIPTION)
