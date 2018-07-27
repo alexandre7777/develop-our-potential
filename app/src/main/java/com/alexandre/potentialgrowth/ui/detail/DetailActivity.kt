@@ -45,39 +45,15 @@ class DetailActivity : AppCompatActivity() {
 
             description.text = viewModel.learnItem.value?.description
 
-            when (viewModel.learnItem.value?.idType){
-                1 -> {
-                    container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.communication))
-                    img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.people))
-                    name.setTextColor(ContextCompat.getColor(container.context, R.color.white))
-                    description.setTextColor(ContextCompat.getColor(container.context, R.color.white))
-                }
-                2 -> {
-                    container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.life_style))
-                    img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.thumb_up))
-                    name.setTextColor(ContextCompat.getColor(container.context, R.color.white))
-                    description.setTextColor(ContextCompat.getColor(container.context, R.color.white))
-                }
-                3 -> {
-                    container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.self_confidence))
-                    img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.smile))
-                    name.setTextColor(ContextCompat.getColor(container.context, R.color.black))
-                    description.setTextColor(ContextCompat.getColor(container.context, R.color.black))
-                }
-                4 -> {
-                    container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.health))
-                    img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.heart))
-                    name.setTextColor(ContextCompat.getColor(container.context, R.color.black))
-                    description.setTextColor(ContextCompat.getColor(container.context, R.color.black))
-                }
-                5 -> {
-                    container.setBackgroundColor(ContextCompat.getColor(container.context, R.color.white))
-                    img.setImageDrawable(ContextCompat.getDrawable(img.context, R.drawable.cake))
-                    name.setTextColor(ContextCompat.getColor(container.context, R.color.black))
-                    description.setTextColor(ContextCompat.getColor(container.context, R.color.black))
-                }
-            }
+            img.setImageDrawable(viewModel.learnItem.value?.getDrawable(img.context))
 
+            viewModel.learnItem.value?.getColor(container.context)?.let { color -> container.setBackgroundColor(color) }
+
+            viewModel.learnItem.value?.getTextColor(container.context)?.let {
+                textColor ->
+                name.setTextColor(textColor)
+                description.setTextColor(textColor)
+            }
         })
     }
 }
