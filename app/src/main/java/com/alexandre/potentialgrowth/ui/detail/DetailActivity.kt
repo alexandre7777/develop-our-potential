@@ -23,6 +23,8 @@ class DetailActivity : AppCompatActivity() {
 
     public val VIEW_NAME_TEXT_DESCRIPTION = "detail:text:description"
 
+    public val VIEW_NAME_APPBARLAYOUT = "detail:nav:appbarlayout"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -35,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
         ViewCompat.setTransitionName(description, VIEW_NAME_TEXT_DESCRIPTION)
         ViewCompat.setTransitionName(img, VIEW_NAME_TYPE_IMAGE)
         ViewCompat.setTransitionName(container, VIEW_NAME_CONTAINER_BACKGROUND)
+        ViewCompat.setTransitionName(appBarLayout, VIEW_NAME_APPBARLAYOUT)
 
         val id = intent.getLongExtra("intentdetailextrakey", 1)
 
