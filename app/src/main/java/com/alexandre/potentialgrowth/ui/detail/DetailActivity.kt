@@ -63,6 +63,7 @@ class DetailActivity : AppCompatActivity() {
                 textColor ->
                 name.setTextColor(textColor)
                 description.setTextColor(textColor)
+                congratulationTxt.setTextColor(textColor)
             }
 
             viewModel.learnItem.value?.getOppositeColor(container.context)?.let {
@@ -79,10 +80,12 @@ class DetailActivity : AppCompatActivity() {
         viewModel.doneItNum.observe(this, Observer<Int> {
             if(it == 0){
                 doneBtn.visibility = View.VISIBLE
+                congratulationTxt.visibility = View.GONE
             }
             else
             {
                 doneBtn.visibility = View.GONE
+                congratulationTxt.visibility = View.VISIBLE
             }
         })
     }
