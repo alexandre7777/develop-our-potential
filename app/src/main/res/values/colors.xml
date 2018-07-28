@@ -5,9 +5,18 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="life_style">#ee4035</color>
+    <color name="opposite_life_style">#11BFCA</color>
+
     <color name="communication">#0392cf</color>
+    <color name="opposite_communication">#FC6D30</color>
+
     <color name="self_confidence">#fdf498</color>
+    <color name="opposite_self_confidence">#020B67</color>
+
     <color name="health">#7bc043</color>
+    <color name="opposite_health">#843FBC</color>
+
+
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 </resources>

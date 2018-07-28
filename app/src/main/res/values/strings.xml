@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Potential Growth</string>
     <string name="image">image</string>
+    <string name="done_it_today">I have done it today</string>
+    <string name="congratulation">Congratulation for your work today !</string>
 </resources>
