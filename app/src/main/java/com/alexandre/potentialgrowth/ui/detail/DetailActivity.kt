@@ -53,12 +53,21 @@ class DetailActivity : AppCompatActivity() {
 
             img.setImageDrawable(viewModel.learnItem.value?.getDrawable(img.context))
 
-            viewModel.learnItem.value?.getColor(container.context)?.let { color -> container.setBackgroundColor(color) }
+            viewModel.learnItem.value?.getColor(container.context)?.let {
+                color ->
+                container.setBackgroundColor(color)
+                doneBtn.setTextColor(color)
+            }
 
             viewModel.learnItem.value?.getTextColor(container.context)?.let {
                 textColor ->
                 name.setTextColor(textColor)
                 description.setTextColor(textColor)
+            }
+
+            viewModel.learnItem.value?.getOppositeColor(container.context)?.let {
+                color ->
+                doneBtn.setBackgroundColor(color)
             }
 
             doneBtn.setOnClickListener({

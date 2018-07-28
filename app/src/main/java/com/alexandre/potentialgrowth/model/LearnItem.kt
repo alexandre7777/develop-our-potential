@@ -80,4 +80,25 @@ data class LearnItem(
         }
         return ContextCompat.getColor(context, R.color.black)
     }
+
+    public fun getOppositeColor(context : Context) : Int {
+        when (idType){
+            1 -> {
+                return ContextCompat.getColor(context, R.color.opposite_communication)
+            }
+            2 -> {
+                return ContextCompat.getColor(context, R.color.opposite_life_style)
+            }
+            3 -> {
+                return ContextCompat.getColor(context, R.color.opposite_self_confidence)
+            }
+            4 -> {
+                return ContextCompat.getColor(context, R.color.opposite_health)
+            }
+            5 -> {
+                return ContextCompat.getColor(context, R.color.black)
+            }
+        }
+        return ContextCompat.getColor(context, R.color.black)
+    }
 }
