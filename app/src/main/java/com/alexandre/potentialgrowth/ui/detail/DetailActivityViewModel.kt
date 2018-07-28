@@ -12,6 +12,8 @@ class DetailActivityViewModel(private val learnItemRepo: LearnItemRepo, private 
 
     public var learnItem : LiveData<LearnItem> = learnItemRepo.getLearnItemById(idLearnItem)
 
+    public var doneItNum : LiveData<Int> = contributionRepo.countHaveDoneforDate(idLearnItem, Date())
+
     public fun insertContribution(idLearnItem: Long?) {
         if (idLearnItem != null) {
             contributionRepo.insert(Contribution(idLearnItem = idLearnItem, idType = 1, time = Date(), result = "", idContribution = 0))

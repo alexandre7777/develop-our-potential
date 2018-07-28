@@ -14,6 +14,6 @@ interface ContributionDao{
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(contribution: Contribution)
 
-    @Query("SELECT COUNT(idContribution) FROM contribution WHERE time BETWEEN :from AND :to AND :idLearnItem")
-    fun countContributionforDate(from: Date, to: Date, idLearnItem: Long): LiveData<Int>
+    @Query("SELECT COUNT(idContribution) FROM contribution WHERE time BETWEEN :from AND :to AND idLearnItem = :idLearnItem AND idType = 1")
+    fun countHaveDoneforDate(from: Date, to: Date, idLearnItem: Long): LiveData<Int>
 }

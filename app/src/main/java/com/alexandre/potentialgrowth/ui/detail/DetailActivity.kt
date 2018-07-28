@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
@@ -64,6 +65,16 @@ class DetailActivity : AppCompatActivity() {
                 viewModel.insertContribution(viewModel.learnItem.value?.idLearnItem)
             })
 
+        })
+
+        viewModel.doneItNum.observe(this, Observer<Int> {
+            if(it == 0){
+                doneBtn.visibility = View.VISIBLE
+            }
+            else
+            {
+                doneBtn.visibility = View.GONE
+            }
         })
     }
 }
