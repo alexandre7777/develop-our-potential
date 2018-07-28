@@ -59,6 +59,11 @@ class DetailActivity : AppCompatActivity() {
                 name.setTextColor(textColor)
                 description.setTextColor(textColor)
             }
+
+            doneBtn.setOnClickListener({
+                viewModel.insertContribution(viewModel.learnItem.value?.idLearnItem)
+            })
+
         })
     }
 }

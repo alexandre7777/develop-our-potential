@@ -2,6 +2,7 @@ package com.alexandre.potentialgrowth
 
 import android.arch.lifecycle.ViewModelProvider
 import android.content.Context
+import com.alexandre.potentialgrowth.data.ContributionRepo
 import com.alexandre.potentialgrowth.data.LearnItemRepo
 import com.alexandre.potentialgrowth.db.LearnItemDatabase
 import com.alexandre.potentialgrowth.ui.detail.ViewModelFactoryDetail
@@ -19,6 +20,11 @@ object Injection{
         return LearnItemRepo(database.learnItemDao(), Executors.newSingleThreadExecutor())
     }
 
+    private fun provideContributionRepo(context: Context): ContributionRepo {
+        val database = LearnItemDatabase.getInstance(context)
+        return ContributionRepo(database.contributionDao(), Executors.newSingleThreadExecutor())
+    }
+
     /**
      * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
      * [ViewModel] objects.
@@ -32,6 +38,6 @@ object Injection{
      * [ViewModel] objects.
      */
     fun provideViewModelFactoryDetail(context: Context, idLearnItem: Long): ViewModelProvider.Factory {
-        return ViewModelFactoryDetail(provideLearnItemRepo(context), idLearnItem)
+        return ViewModelFactoryDetail(provideLearnItemRepo(context), provideContributionRepo(context), idLearnItem)
     }
 }
