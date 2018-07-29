@@ -1,4 +1,4 @@
-package com.alexandre.potentialgrowth.ui.detail
+package com.alexandre.potentialgrowth.ui.knowledgedetail
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
@@ -8,7 +8,7 @@ import com.alexandre.potentialgrowth.model.Contribution
 import com.alexandre.potentialgrowth.model.LearnItem
 import java.util.*
 
-class DetailActivityViewModel(private val learnItemRepo: LearnItemRepo, private val contributionRepo: ContributionRepo, idLearnItem: Long) : ViewModel() {
+class KnowledgeDetailActivityViewModel(private val learnItemRepo: LearnItemRepo, private val contributionRepo: ContributionRepo, idLearnItem: Long) : ViewModel() {
 
     public var learnItem : LiveData<LearnItem> = learnItemRepo.getLearnItemById(idLearnItem)
 

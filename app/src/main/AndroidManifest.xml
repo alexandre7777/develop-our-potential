@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
         android:name=".application.PotentialGrowthApplicaiton">
-        <activity android:name=".ui.detail.DetailActivity">
+        <activity android:name=".ui.knowledgedetail.KnowledgeDetailActivity">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".ui.home.HomeActivity" />

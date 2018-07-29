@@ -1,4 +1,4 @@
-package com.alexandre.potentialgrowth.ui.detail
+package com.alexandre.potentialgrowth.ui.knowledgedetail
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -12,9 +12,9 @@ import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.activity_detail.*
 
-class DetailActivity : AppCompatActivity() {
+class KnowledgeDetailActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: DetailActivityViewModel
+    private lateinit var viewModelKnowledge: KnowledgeDetailActivityViewModel
 
     public val VIEW_NAME_TYPE_IMAGE = "detail:type:image"
 
@@ -42,42 +42,42 @@ class DetailActivity : AppCompatActivity() {
 
         val id = intent.getLongExtra(KnowledgeFragment().INTENT_DETAIL_EXTRA, 1)
 
-        viewModel = ViewModelProviders.of(this, Injection.provideViewModelFactoryDetail(this, id))
-                .get(DetailActivityViewModel::class.java)
+        viewModelKnowledge = ViewModelProviders.of(this, Injection.provideViewModelFactoryDetail(this, id))
+                .get(KnowledgeDetailActivityViewModel::class.java)
 
 
-        viewModel.learnItem.observe(this, Observer<LearnItem> {
-            name.text = viewModel.learnItem.value?.name
+        viewModelKnowledge.learnItem.observe(this, Observer<LearnItem> {
+            name.text = viewModelKnowledge.learnItem.value?.name
 
-            description.text = viewModel.learnItem.value?.description
+            description.text = viewModelKnowledge.learnItem.value?.description
 
-            img.setImageDrawable(viewModel.learnItem.value?.getDrawable(img.context))
+            img.setImageDrawable(viewModelKnowledge.learnItem.value?.getDrawable(img.context))
 
-            viewModel.learnItem.value?.getColor(container.context)?.let {
+            viewModelKnowledge.learnItem.value?.getColor(container.context)?.let {
                 color ->
                 container.setBackgroundColor(color)
                 doneBtn.setTextColor(color)
             }
 
-            viewModel.learnItem.value?.getTextColor(container.context)?.let {
+            viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let {
                 textColor ->
                 name.setTextColor(textColor)
                 description.setTextColor(textColor)
                 congratulationTxt.setTextColor(textColor)
             }
 
-            viewModel.learnItem.value?.getOppositeColor(container.context)?.let {
+            viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let {
                 color ->
                 doneBtn.setBackgroundColor(color)
             }
 
             doneBtn.setOnClickListener({
-                viewModel.insertContribution(viewModel.learnItem.value?.idLearnItem)
+                viewModelKnowledge.insertContribution(viewModelKnowledge.learnItem.value?.idLearnItem)
             })
 
         })
 
-        viewModel.doneItNum.observe(this, Observer<Int> {
+        viewModelKnowledge.doneItNum.observe(this, Observer<Int> {
             if(it == 0){
                 doneBtn.visibility = View.VISIBLE
                 congratulationTxt.visibility = View.GONE
