@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.alexandre.potentialgrowth.model.Contribution
 
-class CommentAdapter(val listener: (View?, Contribution) -> Unit) : ListAdapter<Contribution, RecyclerView.ViewHolder>(CommentAdapter.REPO_COMPARATOR) {
+class CommentAdapter( val listener: (View?, Contribution) -> Unit) : ListAdapter<Contribution, RecyclerView.ViewHolder>(CommentAdapter.REPO_COMPARATOR) {
+
+    public var color: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CommentViewHolder.create(parent)
@@ -16,7 +18,7 @@ class CommentAdapter(val listener: (View?, Contribution) -> Unit) : ListAdapter<
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val repoItem = getItem(position)
         if (repoItem != null) {
-            (holder as CommentViewHolder).bind(repoItem, listener)
+            (holder as CommentViewHolder).bind(repoItem, color, listener)
         }
     }
 

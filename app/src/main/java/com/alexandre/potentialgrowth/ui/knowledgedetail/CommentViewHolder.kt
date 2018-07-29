@@ -14,7 +14,7 @@ class CommentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val commentTxt: TextView = view.findViewById(R.id.commentTxt)
     private var contribution: Contribution? = null
 
-    fun bind(contribution: Contribution?, listener: (View?, Contribution) -> Unit) {
+    fun bind(contribution: Contribution?, color: Int, listener: (View?, Contribution) -> Unit) {
         if (contribution == null) {
             /*val resources = itemView.resources
             name.text = resources.getString(R.string.loading)
@@ -23,14 +23,16 @@ class CommentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             stars.text = resources.getString(R.string.unknown)
             forks.text = resources.getString(R.string.unknown)*/
         } else {
-            showRepoData(contribution, listener)
+            showRepoData(contribution, color, listener)
         }
     }
 
-    private fun showRepoData(contribution: Contribution, listener: (View?, Contribution) -> Unit) {
+    private fun showRepoData(contribution: Contribution, color: Int, listener: (View?, Contribution) -> Unit) {
         this.contribution = contribution
         dateTxt.text = contribution.time.toString()
         commentTxt.text = contribution.result
+        dateTxt.setTextColor(color)
+        commentTxt.setTextColor(color)
 
         this.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

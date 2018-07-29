@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
         android:name=".application.PotentialGrowthApplicaiton">
-        <activity android:name=".ui.knowledgedetail.KnowledgeDetailActivity">
+        <activity android:name=".ui.knowledgedetail.KnowledgeDetailActivity"
+            android:windowSoftInputMode="adjustResize">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".ui.home.HomeActivity" />

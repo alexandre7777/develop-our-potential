@@ -61,16 +61,20 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 container.setBackgroundColor(color)
                 nestedScroll.setBackgroundColor(color)
                 doneBtn.setTextColor(color)
+                commentBtn.setTextColor(color)
             }
 
             viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let { textColor ->
                 name.setTextColor(textColor)
                 description.setTextColor(textColor)
                 congratulationTxt.setTextColor(textColor)
+                adapter.color = textColor
+                initAdapter()
             }
 
             viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let { color ->
                 doneBtn.setBackgroundColor(color)
+                commentBtn.setBackgroundColor(color)
             }
 
             doneBtn.setOnClickListener({
@@ -92,7 +96,7 @@ class KnowledgeDetailActivity : AppCompatActivity() {
             }
         })
 
-        initAdapter()
+
     }
 
     private fun initAdapter() {
