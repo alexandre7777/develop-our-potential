@@ -10,14 +10,13 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.util.Pair
 import android.support.v7.widget.GridLayoutManager
-import android.util.Log
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
-import com.alexandre.potentialgrowth.ui.detail.DetailActivity
+import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.fragment_knowledge.*
 
 
@@ -28,7 +27,7 @@ class KnowledgeFragment : Fragment(){
     private lateinit var viewModel: KnowledgeFragmentViewModel
 
     private val adapter = LearnItemAdapter() { view: View?, learnItem: LearnItem ->
-        val intent = Intent(activity, DetailActivity::class.java).apply {
+        val intent = Intent(activity, KnowledgeDetailActivity::class.java).apply {
             putExtra(INTENT_DETAIL_EXTRA, learnItem.idLearnItem)
         }
 
@@ -38,15 +37,15 @@ class KnowledgeFragment : Fragment(){
                 // Now we provide a list of Pair items which contain the view we can transitioning
                 // from, and the name of the view it is transitioning to, in the launched activity
                 Pair<View, String>(view?.findViewById(R.id.img),
-                        DetailActivity().VIEW_NAME_TYPE_IMAGE),
+                        KnowledgeDetailActivity().VIEW_NAME_TYPE_IMAGE),
                 Pair<View, String>(view?.findViewById(R.id.container),
-                        DetailActivity().VIEW_NAME_CONTAINER_BACKGROUND),
+                        KnowledgeDetailActivity().VIEW_NAME_CONTAINER_BACKGROUND),
                 Pair<View, String>(view?.findViewById(R.id.name),
-                        DetailActivity().VIEW_NAME_TEXT_TITLE),
+                        KnowledgeDetailActivity().VIEW_NAME_TEXT_TITLE),
                 Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
-                        DetailActivity().VIEW_NAME_APPBARLAYOUT),
+                        KnowledgeDetailActivity().VIEW_NAME_APPBARLAYOUT),
                 Pair<View, String>(view?.findViewById(R.id.description),
-                        DetailActivity().VIEW_NAME_TEXT_DESCRIPTION))
+                        KnowledgeDetailActivity().VIEW_NAME_TEXT_DESCRIPTION))
 
 
 
@@ -82,7 +81,6 @@ class KnowledgeFragment : Fragment(){
 
 
         viewModel.mLearnItem.observe(this, Observer<List<LearnItem>> {
-            Log.d("Activity", "list: ${it?.size}")
             adapter.submitList(it)
         })
     }

@@ -3,4 +3,7 @@
     <string name="image">image</string>
     <string name="done_it_today">I have done it today</string>
     <string name="congratulation">Congratulation for your work today !</string>
+    <string name="comment">Comment !</string>
+    <string name="your_comments">Your comments</string>
+    <string name="date_comment">On the %1$s you commented :</string>
 </resources>

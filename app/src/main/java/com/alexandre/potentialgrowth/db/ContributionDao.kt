@@ -16,4 +16,7 @@ interface ContributionDao{
 
     @Query("SELECT COUNT(idContribution) FROM contribution WHERE time BETWEEN :from AND :to AND idLearnItem = :idLearnItem AND idType = 1")
     fun countHaveDoneforDate(from: Date, to: Date, idLearnItem: Long): LiveData<Int>
+
+    @Query("SELECT idContribution, idLearnItem, idType, time, result FROM contribution WHERE idLearnItem = :id AND idType = 2 ORDER BY time DESC")
+    fun getContributionForLearnItem(id : Long): LiveData<List<Contribution>>
 }

@@ -1,7 +1,6 @@
 package com.alexandre.potentialgrowth.data
 
 import android.arch.lifecycle.LiveData
-import android.util.Log
 import com.alexandre.potentialgrowth.db.ContributionDao
 import com.alexandre.potentialgrowth.model.Contribution
 import java.util.*
@@ -29,8 +28,10 @@ class ContributionRepo(private val contributionDao: ContributionDao, private val
         val cal3 = GregorianCalendar.getInstance()
         cal3.set(year, month, date + 1, 0, 0, 0)
 
-        Log.d("TAG", cal2.time.toString() + "***********" + cal3.time.toString())
-
         return contributionDao.countHaveDoneforDate(cal2.time, cal3.time, idLearnItem)
+    }
+
+    fun getContributionForLearnItem(idLearnItem: Long) : LiveData<List<Contribution>>{
+        return contributionDao.getContributionForLearnItem(idLearnItem)
     }
 }
