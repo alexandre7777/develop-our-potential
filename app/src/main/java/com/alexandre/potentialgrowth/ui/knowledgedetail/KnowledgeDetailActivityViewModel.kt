@@ -19,4 +19,10 @@ class KnowledgeDetailActivityViewModel(private val learnItemRepo: LearnItemRepo,
             contributionRepo.insert(Contribution(idLearnItem = idLearnItem, idType = 1, time = Date(), result = "", idContribution = 0))
         }
     }
+
+    public fun commentContribution(idLearnItem: Long?, text: String) {
+        if (idLearnItem != null) {
+            contributionRepo.insert(Contribution(idLearnItem = idLearnItem, idType = 2, time = Date(), result = text, idContribution = 0))
+        }
+    }
 }

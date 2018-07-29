@@ -75,6 +75,9 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 viewModelKnowledge.insertContribution(viewModelKnowledge.learnItem.value?.idLearnItem)
             })
 
+            commentBtn.setOnClickListener({
+                viewModelKnowledge.commentContribution(viewModelKnowledge.learnItem.value?.idLearnItem, commentEd.text.toString())
+            })
         })
 
         viewModelKnowledge.doneItNum.observe(this, Observer<Int> {
