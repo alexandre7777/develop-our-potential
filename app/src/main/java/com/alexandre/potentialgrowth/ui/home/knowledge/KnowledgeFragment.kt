@@ -10,7 +10,6 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.util.Pair
 import android.support.v7.widget.GridLayoutManager
-import android.util.Log
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
@@ -82,7 +81,6 @@ class KnowledgeFragment : Fragment(){
 
 
         viewModel.mLearnItem.observe(this, Observer<List<LearnItem>> {
-            Log.d("Activity", "list: ${it?.size}")
             adapter.submitList(it)
         })
     }

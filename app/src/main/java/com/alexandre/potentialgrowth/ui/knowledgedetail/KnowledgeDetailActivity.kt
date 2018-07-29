@@ -5,9 +5,11 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
+import com.alexandre.potentialgrowth.model.Contribution
 import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.activity_knowledge_detail.*
@@ -25,6 +27,8 @@ class KnowledgeDetailActivity : AppCompatActivity() {
     public val VIEW_NAME_TEXT_DESCRIPTION = "detail:text:description"
 
     public val VIEW_NAME_APPBARLAYOUT = "detail:nav:appbarlayout"
+
+    private val adapter = CommentAdapter() { view: View?, learnItem: Contribution -> }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,21 +57,19 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
             img.setImageDrawable(viewModelKnowledge.learnItem.value?.getDrawable(img.context))
 
-            viewModelKnowledge.learnItem.value?.getColor(container.context)?.let {
-                color ->
+            viewModelKnowledge.learnItem.value?.getColor(container.context)?.let { color ->
                 container.setBackgroundColor(color)
+                nestedScroll.setBackgroundColor(color)
                 doneBtn.setTextColor(color)
             }
 
-            viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let {
-                textColor ->
+            viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let { textColor ->
                 name.setTextColor(textColor)
                 description.setTextColor(textColor)
                 congratulationTxt.setTextColor(textColor)
             }
 
-            viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let {
-                color ->
+            viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let { color ->
                 doneBtn.setBackgroundColor(color)
             }
 
@@ -81,15 +83,24 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         })
 
         viewModelKnowledge.doneItNum.observe(this, Observer<Int> {
-            if(it == 0){
+            if (it == 0) {
                 doneBtn.visibility = View.VISIBLE
                 congratulationTxt.visibility = View.GONE
-            }
-            else
-            {
+            } else {
                 doneBtn.visibility = View.GONE
                 congratulationTxt.visibility = View.VISIBLE
             }
+        })
+
+        initAdapter()
+    }
+
+    private fun initAdapter() {
+        commentRl.layoutManager = LinearLayoutManager(applicationContext)
+        commentRl.adapter = adapter
+
+        viewModelKnowledge.commentList.observe(this, Observer<List<Contribution>> {
+            adapter.submitList(it)
         })
     }
 }
