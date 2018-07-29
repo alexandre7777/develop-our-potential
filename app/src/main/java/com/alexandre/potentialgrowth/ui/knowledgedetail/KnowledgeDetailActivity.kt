@@ -10,7 +10,7 @@ import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
-import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_knowledge_detail.*
 
 class KnowledgeDetailActivity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
+        setContentView(R.layout.activity_knowledge_detail)
 
         setSupportActionBar(toolbar)
 
