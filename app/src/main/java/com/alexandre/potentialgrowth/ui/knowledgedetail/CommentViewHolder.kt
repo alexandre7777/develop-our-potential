@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.Contribution
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CommentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -15,21 +17,15 @@ class CommentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private var contribution: Contribution? = null
 
     fun bind(contribution: Contribution?, color: Int, listener: (View?, Contribution) -> Unit) {
-        if (contribution == null) {
-            /*val resources = itemView.resources
-            name.text = resources.getString(R.string.loading)
-            description.visibility = View.GONE
-            language.visibility = View.GONE
-            stars.text = resources.getString(R.string.unknown)
-            forks.text = resources.getString(R.string.unknown)*/
-        } else {
+        if (contribution != null) {
             showRepoData(contribution, color, listener)
         }
     }
 
     private fun showRepoData(contribution: Contribution, color: Int, listener: (View?, Contribution) -> Unit) {
         this.contribution = contribution
-        dateTxt.text = contribution.time.toString()
+
+        dateTxt.text =  dateTxt.context.getString(R.string.date_comment, SimpleDateFormat("dd/MM/yyy", Locale.getDefault()).format(contribution.time))
         commentTxt.text = contribution.result
         dateTxt.setTextColor(color)
         commentTxt.setTextColor(color)
