@@ -31,6 +31,23 @@ class ContributionRepo(private val contributionDao: ContributionDao, private val
         return contributionDao.countHaveDoneforDate(cal2.time, cal3.time, idLearnItem)
     }
 
+    fun countHaveDoneforWeek(idType: Int, time : Date): LiveData<Int> {
+
+        val cal = GregorianCalendar.getInstance()
+        cal.setTime(time)
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val date = cal.get(Calendar.DATE)
+
+        val cal2 = GregorianCalendar.getInstance()
+        cal2.set(year, month, date - 6, 0, 0, 0)
+
+        val cal3 = GregorianCalendar.getInstance()
+        cal3.set(year, month, date + 1, 0, 0, 0)
+
+        return contributionDao.countHaveDoneforDateAndType(cal2.time, cal3.time, idType)
+    }
+
     fun getContributionForLearnItem(idLearnItem: Long) : LiveData<List<Contribution>>{
         return contributionDao.getContributionForLearnItem(idLearnItem)
     }
