@@ -1,13 +1,19 @@
 package com.alexandre.potentialgrowth.ui.home.dashboard
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashBoardFragment : Fragment(){
+
+    private lateinit var viewModelDashboard: DashBoardFragmentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +22,34 @@ class DashBoardFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        viewModelDashboard = ViewModelProviders.of(this, Injection.provideViewModelFactoryDashboard(activity!!))
+                .get(DashBoardFragmentViewModel::class.java)
+
+        viewModelDashboard.countContributionCommunication.observe(this, Observer<Int> {
+            val progress = it?.times(20) as Int
+            progressBarCommunication.setProgress(progress)
+        })
+
+        viewModelDashboard.countContributionLifeStyle.observe(this, Observer<Int> {
+            val progress = it?.times(20) as Int
+            progressBarLifeStyle.setProgress(progress)
+        })
+
+        viewModelDashboard.countContributionHealth.observe(this, Observer<Int> {
+            val progress = it?.times(20) as Int
+            progressBarHealth.setProgress(progress)
+        })
+
+        viewModelDashboard.countContributionSelfEsteem.observe(this, Observer<Int> {
+            val progress = it?.times(20) as Int
+            progressBarSelfConfidence.setProgress(progress)
+        })
+
+        viewModelDashboard.countContributionFindYourself.observe(this, Observer<Int> {
+            val progress = it?.times(20) as Int
+            progressBarFindYourself.setProgress(progress)
+        })
+
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 }
