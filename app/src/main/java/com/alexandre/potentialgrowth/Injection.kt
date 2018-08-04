@@ -5,6 +5,7 @@ import android.content.Context
 import com.alexandre.potentialgrowth.data.ContributionRepo
 import com.alexandre.potentialgrowth.data.LearnItemRepo
 import com.alexandre.potentialgrowth.db.LearnItemDatabase
+import com.alexandre.potentialgrowth.ui.dashboarddetail.ViewModelFactoryDashboardDetail
 import com.alexandre.potentialgrowth.ui.home.dashboard.ViewModelFactoryDashboard
 import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryKnowledgeDetail
 import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
@@ -40,5 +41,9 @@ object Injection{
 
     fun provideViewModelFactoryDashboard(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryDashboard(provideContributionRepo(context))
+    }
+
+    fun provideViewModelFactoryDashboardDetail(context: Context, idTypeLearnItem: Int): ViewModelProvider.Factory {
+        return ViewModelFactoryDashboardDetail(provideContributionRepo(context), idTypeLearnItem)
     }
 }

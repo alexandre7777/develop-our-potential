@@ -22,12 +22,13 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/lifeStyleCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/life_style">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewLifeStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -41,6 +42,7 @@
 
 
                 <TextView
+                    android:id="@+id/txtLifeStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -53,7 +55,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/progressBarLifeStyle"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewLifeStyle"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
@@ -86,12 +88,13 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/communicationCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/communication">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageViewCommunication"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -105,6 +108,7 @@
 
 
                 <TextView
+                    android:id="@+id/txtCommunication"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -116,7 +120,7 @@
                     android:textSize="@dimen/text_big"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewCommunication"
                     app:layout_constraintStart_toEndOf="@+id/progressBarCommunication"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -151,12 +155,13 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/healthCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/health">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imageViewHeath"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -170,6 +175,7 @@
 
 
                 <TextView
+                    android:id="@+id/txtHealth"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -182,7 +188,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/progressBarHealth"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewHeath"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
@@ -216,12 +222,13 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/selfConfidenceCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/self_confidence">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/imageViewSelfConfidence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -235,6 +242,7 @@
 
 
                 <TextView
+                    android:id="@+id/txtSelfConfidence"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -246,7 +254,7 @@
                     android:textSize="@dimen/text_big"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewSelfConfidence"
                     app:layout_constraintStart_toEndOf="@+id/progressBarSelfConfidence"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -282,12 +290,13 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/findYourselfCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/imageViewFindYourself"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -300,6 +309,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/txtFindYourself"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -312,7 +322,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/progressBarFindYourself"
-                    app:layout_constraintStart_toEndOf="@+id/imageView6"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewFindYourself"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar

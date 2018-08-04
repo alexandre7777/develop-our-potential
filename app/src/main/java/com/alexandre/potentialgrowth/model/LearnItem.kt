@@ -101,4 +101,25 @@ data class LearnItem(
         }
         return ContextCompat.getColor(context, R.color.black)
     }
+
+    public fun getProgressDrawable(context : Context) : Drawable? {
+        when (idType){
+            1 -> {
+                return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_blue)
+            }
+            2 -> {
+                return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_red)
+            }
+            3 -> {
+                return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_yellow)
+            }
+            4 -> {
+                return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_green)
+            }
+            5 -> {
+                return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_black)
+            }
+        }
+        return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_black)
+    }
 }
