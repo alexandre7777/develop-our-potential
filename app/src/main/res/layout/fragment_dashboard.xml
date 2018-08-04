@@ -22,6 +22,7 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/lifeStyleCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/life_style">
@@ -86,6 +87,7 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/communicationCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/communication">
@@ -151,6 +153,7 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/healthCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/health">
@@ -216,6 +219,7 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/selfConfidenceCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/self_confidence">
@@ -282,6 +286,7 @@
             app:cardCornerRadius="8dp">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/findYourselfCL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white">
