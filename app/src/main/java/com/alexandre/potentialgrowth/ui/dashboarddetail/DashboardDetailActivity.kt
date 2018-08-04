@@ -58,7 +58,7 @@ class DashboardDetailActivity : AppCompatActivity() {
 
         backgroundCL.setBackgroundColor(learnItem.getColor(this))
 
-        progressBar.background = learnItem.getProgressDrawable(this)
+        progressBar.progressDrawable = learnItem.getProgressDrawable(this)
 
         titleTxt.setTextColor(learnItem.getTextColor(this))
         titleTxt.text = title
