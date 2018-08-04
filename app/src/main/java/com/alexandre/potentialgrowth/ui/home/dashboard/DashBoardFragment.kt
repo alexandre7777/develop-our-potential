@@ -19,6 +19,10 @@ import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashBoardFragment : Fragment(){
 
+    public val INTENT_DETAIL_EXTRA = "intentdetailextrakey"
+
+    public val INTENT_DETAIL_EXTRA_TEXT = "intentdetailextratextkey"
+
     private lateinit var viewModelDashboard: DashBoardFragmentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +72,8 @@ class DashBoardFragment : Fragment(){
 
         lifeStyleCL.setOnClickListener() {
             val intent = Intent(activity, DashboardDetailActivity::class.java).apply {
-                //putExtra(INTENT_DETAIL_EXTRA, learnItem.idLearnItem)
+                putExtra(INTENT_DETAIL_EXTRA, 2)
+                putExtra(INTENT_DETAIL_EXTRA_TEXT, resources.getString(R.string.life_style))
             }
 
             val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
@@ -77,14 +82,20 @@ class DashBoardFragment : Fragment(){
                     Pair<View, String>(view?.findViewById(R.id.progressBarLifeStyle),
                             DashboardDetailActivity().VIEW_PROGRESSION_PROGRESS),
                     Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
-                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT))
+                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT),
+                    Pair<View, String>(activity?.findViewById(R.id.imageViewLifeStyle),
+                            DashboardDetailActivity().VIEW_IMG_PICTO),
+                    Pair<View, String>(activity?.findViewById(R.id.txtLifeStyle),
+                            DashboardDetailActivity().VIEW_TXT_TITLE))
+
 
             ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
         }
 
         communicationCL.setOnClickListener() {
             val intent = Intent(activity, DashboardDetailActivity::class.java).apply {
-                //putExtra(INTENT_DETAIL_EXTRA, learnItem.idLearnItem)
+                putExtra(INTENT_DETAIL_EXTRA, 1)
+                putExtra(INTENT_DETAIL_EXTRA_TEXT, resources.getString(R.string.communication))
             }
 
             val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
@@ -93,7 +104,11 @@ class DashBoardFragment : Fragment(){
                     Pair<View, String>(view?.findViewById(R.id.progressBarCommunication),
                             DashboardDetailActivity().VIEW_PROGRESSION_PROGRESS),
                     Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
-                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT))
+                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT),
+                    Pair<View, String>(activity?.findViewById(R.id.imageViewCommunication),
+                            DashboardDetailActivity().VIEW_IMG_PICTO),
+                    Pair<View, String>(activity?.findViewById(R.id.txtCommunication),
+                            DashboardDetailActivity().VIEW_TXT_TITLE))
 
             ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
         }
