@@ -113,5 +113,67 @@ class DashBoardFragment : Fragment(){
             ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
         }
 
+        healthCL.setOnClickListener() {
+            val intent = Intent(activity, DashboardDetailActivity::class.java).apply {
+                putExtra(INTENT_DETAIL_EXTRA, 4)
+                putExtra(INTENT_DETAIL_EXTRA_TEXT, resources.getString(R.string.health))
+            }
+
+            val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    activity as Activity,
+
+                    Pair<View, String>(view?.findViewById(R.id.progressBarHealth),
+                            DashboardDetailActivity().VIEW_PROGRESSION_PROGRESS),
+                    Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
+                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT),
+                    Pair<View, String>(activity?.findViewById(R.id.imageViewHeath),
+                            DashboardDetailActivity().VIEW_IMG_PICTO),
+                    Pair<View, String>(activity?.findViewById(R.id.txtHealth),
+                            DashboardDetailActivity().VIEW_TXT_TITLE))
+
+            ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
+        }
+
+        selfConfidenceCL.setOnClickListener() {
+            val intent = Intent(activity, DashboardDetailActivity::class.java).apply {
+                putExtra(INTENT_DETAIL_EXTRA, 3)
+                putExtra(INTENT_DETAIL_EXTRA_TEXT, resources.getString(R.string.self_confidence))
+            }
+
+            val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    activity as Activity,
+
+                    Pair<View, String>(view?.findViewById(R.id.progressBarSelfConfidence),
+                            DashboardDetailActivity().VIEW_PROGRESSION_PROGRESS),
+                    Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
+                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT),
+                    Pair<View, String>(activity?.findViewById(R.id.imageViewSelfConfidence),
+                            DashboardDetailActivity().VIEW_IMG_PICTO),
+                    Pair<View, String>(activity?.findViewById(R.id.txtSelfConfidence),
+                            DashboardDetailActivity().VIEW_TXT_TITLE))
+
+            ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
+        }
+
+        findYourselfCL.setOnClickListener() {
+            val intent = Intent(activity, DashboardDetailActivity::class.java).apply {
+                putExtra(INTENT_DETAIL_EXTRA, 5)
+                putExtra(INTENT_DETAIL_EXTRA_TEXT, resources.getString(R.string.find_yourself))
+            }
+
+            val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    activity as Activity,
+
+                    Pair<View, String>(view?.findViewById(R.id.progressBarFindYourself),
+                            DashboardDetailActivity().VIEW_PROGRESSION_PROGRESS),
+                    Pair<View, String>(activity?.findViewById(R.id.appBarLayout),
+                            DashboardDetailActivity().VIEW_NAME_APPBARLAYOUT),
+                    Pair<View, String>(activity?.findViewById(R.id.imageViewFindYourself),
+                            DashboardDetailActivity().VIEW_IMG_PICTO),
+                    Pair<View, String>(activity?.findViewById(R.id.txtFindYourself),
+                            DashboardDetailActivity().VIEW_TXT_TITLE))
+
+            ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
+        }
     }
 }
