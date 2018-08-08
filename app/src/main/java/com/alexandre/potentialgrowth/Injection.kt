@@ -9,6 +9,7 @@ import com.alexandre.potentialgrowth.ui.dashboarddetail.ViewModelFactoryDashboar
 import com.alexandre.potentialgrowth.ui.home.dashboard.ViewModelFactoryDashboard
 import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryKnowledgeDetail
 import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
+import com.alexandre.potentialgrowth.ui.home.reward.ViewModelFactoryReward
 import java.util.concurrent.Executors
 
 object Injection{
@@ -45,5 +46,9 @@ object Injection{
 
     fun provideViewModelFactoryDashboardDetail(context: Context, idTypeLearnItem: Int): ViewModelProvider.Factory {
         return ViewModelFactoryDashboardDetail(provideContributionRepo(context), idTypeLearnItem)
+    }
+
+    fun provideViewModelFactoryReward(context: Context): ViewModelProvider.Factory {
+        return ViewModelFactoryReward(provideContributionRepo(context))
     }
 }
