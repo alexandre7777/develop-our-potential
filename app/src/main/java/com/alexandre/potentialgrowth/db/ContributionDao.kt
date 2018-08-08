@@ -22,4 +22,7 @@ interface ContributionDao{
 
     @Query("SELECT idContribution, idLearnItem, idType, time, result FROM contribution WHERE idLearnItem = :id AND idType = 2 ORDER BY time DESC")
     fun getContributionForLearnItem(id : Long): LiveData<List<Contribution>>
+
+    @Query("SELECT COUNT(idContribution) FROM contribution WHERE idType = :idType")
+    fun countHaveDone(idType: Int): LiveData<Int>
 }
