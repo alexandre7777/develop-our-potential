@@ -29,7 +29,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/done"
-        android:src="@drawable/done"
+        android:src="@drawable/done_disable"
         app:layout_constraintEnd_toStartOf="@+id/commentBronze"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doneTxt" />
@@ -42,7 +42,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/done"
-        android:src="@drawable/done"
+        android:src="@drawable/done_disable"
         app:layout_constraintEnd_toStartOf="@+id/commentSilver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doneBronze" />
@@ -56,7 +56,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/done"
-        android:src="@drawable/done"
+        android:src="@drawable/done_disable"
         app:layout_constraintEnd_toStartOf="@+id/commentGold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doneSilver" />
