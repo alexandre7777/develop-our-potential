@@ -17,4 +17,7 @@ The detail tab 2 give you the possibility to check if you as done the topic toda
 
 <img width="200" alt="example" src="cap3.png"/>
 
+We use transition between list and detail :
+
+<img width="200" alt="example" src="cap5.png"/>
 
