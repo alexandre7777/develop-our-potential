@@ -12,7 +12,9 @@ import com.alexandre.potentialgrowth.ui.home.dashboard.DashBoardFragment
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import com.alexandre.potentialgrowth.ui.home.reward.RewardFragment
 
-
+/**
+ * First activity with 3 tabs
+ */
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +32,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(DashBoardFragment(), "DASHBOARD")
-        adapter.addFragment(KnowledgeFragment(), "KNOWLEGDE")
+        adapter.addFragment(KnowledgeFragment(), "KNOWLEDGE")
         adapter.addFragment(RewardFragment(), "REWARDS")
         viewPager.adapter = adapter
     }

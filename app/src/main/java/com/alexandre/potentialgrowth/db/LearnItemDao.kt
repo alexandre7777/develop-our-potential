@@ -7,6 +7,9 @@ import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
 import com.alexandre.potentialgrowth.model.LearnItem
 
+/**
+ * DAO to manage item to learn
+ */
 @Dao
 interface LearnItemDao{
 

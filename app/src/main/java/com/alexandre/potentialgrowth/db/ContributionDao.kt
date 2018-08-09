@@ -8,6 +8,9 @@ import android.arch.persistence.room.Query
 import com.alexandre.potentialgrowth.model.Contribution
 import java.util.*
 
+/**
+ * DAO to manage progress made by the user
+ */
 @Dao
 interface ContributionDao{
 

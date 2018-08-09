@@ -10,6 +10,9 @@ import android.widget.TextView
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
 
+/**
+ * View Holder for displaying item on the secand home tab
+ */
 class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val name: TextView = view.findViewById(R.id.name)
     private val description: TextView = view.findViewById(R.id.description)
@@ -20,18 +23,14 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private var learnItem: LearnItem? = null
 
     fun bind(learnItem: LearnItem?, listener: (View?, LearnItem) -> Unit) {
-        if (learnItem == null) {
-            /*val resources = itemView.resources
-            name.text = resources.getString(R.string.loading)
-            description.visibility = View.GONE
-            language.visibility = View.GONE
-            stars.text = resources.getString(R.string.unknown)
-            forks.text = resources.getString(R.string.unknown)*/
-        } else {
+        if (learnItem != null) {
             showRepoData(learnItem, listener)
         }
     }
 
+    /**
+     * Set colors and text for the item
+     */
     private fun showRepoData(learnItem: LearnItem, listener: (View?, LearnItem) -> Unit) {
         this.learnItem = learnItem
         name.text = learnItem.name

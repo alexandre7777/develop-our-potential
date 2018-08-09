@@ -19,7 +19,9 @@ import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.fragment_knowledge.*
 
-
+/**
+ * This fragment display the list of item to learn
+ */
 class KnowledgeFragment : Fragment(){
 
     public val INTENT_DETAIL_EXTRA = "intentdetailextrakey"
@@ -52,14 +54,9 @@ class KnowledgeFragment : Fragment(){
         ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-
         val view = inflater.inflate(R.layout.fragment_knowledge, container, false)
 
         // get the view model
@@ -75,6 +72,9 @@ class KnowledgeFragment : Fragment(){
     }
 
 
+    /**
+     * adapter initialisation with a grid layout and data to observe
+     */
     private fun initAdapter(){
         list.layoutManager = GridLayoutManager(activity?.applicationContext, 2)
         list.adapter = adapter

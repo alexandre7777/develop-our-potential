@@ -6,7 +6,7 @@ import com.alexandre.potentialgrowth.model.LearnItem
 import java.util.concurrent.Executor
 
 /**
- * Repository class that works with local and remote data sources.
+ * Repository class that works with local data sources. This repo will handle item to learn.
  */
 class LearnItemRepo(private val learnItemDao: LearnItemDao, private val ioExecutor: Executor) {
 

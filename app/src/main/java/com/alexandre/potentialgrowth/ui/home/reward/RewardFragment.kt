@@ -11,13 +11,12 @@ import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import kotlinx.android.synthetic.main.fragment_reward.*
 
+/**
+ * Reward Tab for the home page, display bronze, silver or gold level achievement
+ */
 class RewardFragment : Fragment(){
 
     private lateinit var viewModelReward: RewardFragmentViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

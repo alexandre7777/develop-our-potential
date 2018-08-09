@@ -4,6 +4,9 @@ import android.arch.lifecycle.ViewModel
 import com.alexandre.potentialgrowth.data.ContributionRepo
 import java.util.*
 
+/**
+ * View Model for the dashboard tab, contain progression for each of the 5 topics
+ */
 class DashBoardFragmentViewModel(private val repository: ContributionRepo) : ViewModel() {
 
     var countContributionCommunication = repository.countHaveDoneforWeek(1, Date())

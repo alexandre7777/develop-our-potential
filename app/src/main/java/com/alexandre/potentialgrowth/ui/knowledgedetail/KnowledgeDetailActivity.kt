@@ -14,6 +14,9 @@ import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.activity_knowledge_detail.*
 
+/**
+ * Activity to display detail of a specific item to learn
+ */
 class KnowledgeDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModelKnowledge: KnowledgeDetailActivityViewModel
@@ -99,6 +102,9 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * List of comment adapter initialisation
+     */
     private fun initAdapter() {
         commentRl.layoutManager = LinearLayoutManager(applicationContext)
         commentRl.adapter = adapter
