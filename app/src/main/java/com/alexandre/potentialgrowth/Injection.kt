@@ -14,11 +14,19 @@ import java.util.concurrent.Executors
 
 object Injection{
 
+    /**
+     * Provides the [LearnItemRepo] that is then used to get a reference to
+     * [ViewModelProvider.Factory] objects.
+     */
     private fun provideLearnItemRepo(context: Context): LearnItemRepo {
         val database = LearnItemDatabase.getInstance(context)
         return LearnItemRepo(database.learnItemDao(), Executors.newSingleThreadExecutor())
     }
 
+    /**
+     * Provides the [ContributionRepo] that is then used to get a reference to
+     * [ViewModelProvider.Factory] objects.
+     */
     private fun provideContributionRepo(context: Context): ContributionRepo {
         val database = LearnItemDatabase.getInstance(context)
         return ContributionRepo(database.contributionDao(), Executors.newSingleThreadExecutor())
@@ -40,14 +48,26 @@ object Injection{
         return ViewModelFactoryKnowledgeDetail(provideLearnItemRepo(context), provideContributionRepo(context), idLearnItem)
     }
 
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
     fun provideViewModelFactoryDashboard(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryDashboard(provideContributionRepo(context))
     }
 
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
     fun provideViewModelFactoryDashboardDetail(context: Context, idTypeLearnItem: Int): ViewModelProvider.Factory {
         return ViewModelFactoryDashboardDetail(provideContributionRepo(context), idTypeLearnItem)
     }
 
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
     fun provideViewModelFactoryReward(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryReward(provideContributionRepo(context))
     }

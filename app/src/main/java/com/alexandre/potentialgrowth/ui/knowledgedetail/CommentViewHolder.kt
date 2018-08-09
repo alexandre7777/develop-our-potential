@@ -10,6 +10,9 @@ import com.alexandre.potentialgrowth.model.Contribution
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * View Holder to display comment made on an item to learn
+ */
 class CommentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val dateTxt: TextView = view.findViewById(R.id.dateTxt)

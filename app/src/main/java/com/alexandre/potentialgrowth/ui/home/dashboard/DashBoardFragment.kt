@@ -17,6 +17,9 @@ import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.ui.dashboarddetail.DashboardDetailActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
+/**
+ * Dashboard tab in the home, display weekly progress for each of the 5 topics
+ */
 class DashBoardFragment : Fragment(){
 
     public val INTENT_DETAIL_EXTRA = "intentdetailextrakey"
@@ -68,6 +71,9 @@ class DashBoardFragment : Fragment(){
         initListener()
     }
 
+    /**
+     * Init click for each of the 5 card view displayed on the screen
+     */
     private fun initListener() {
 
         lifeStyleCL.setOnClickListener() {

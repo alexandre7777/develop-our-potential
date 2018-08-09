@@ -11,6 +11,9 @@ import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.home.dashboard.DashBoardFragment
 import kotlinx.android.synthetic.main.activity_dashbroad_detail.*
 
+/**
+ * Display one item for dashboard
+ */
 class DashboardDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModelDashboardDetail: DashboardDetailViewModel
@@ -53,6 +56,9 @@ class DashboardDetailActivity : AppCompatActivity() {
         setupView(id, title)
     }
 
+    /**
+     * Setup view colors, texts
+     */
     private fun setupView(type : Int, title : String) {
         val learnItem = LearnItem(0, type, 0, "", "", "")
 
