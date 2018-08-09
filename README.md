@@ -11,7 +11,7 @@ The tab 2 displays topics to learn :
 
 The tab 3 displays rewards : 
 
-<img width="200" alt="example" src="cap3.png"/>
+<img width="200" alt="example" src="cap4.png"/>
 
 The detail tab 2 give you the possibility to check if you as done the topic today and to comment the topic : 
 
