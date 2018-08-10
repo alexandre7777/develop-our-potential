@@ -21,3 +21,16 @@ We use transition between list and detail :
 
 <img width="200" alt="example" src="cap5.gif"/>
 
+Files are organized as shown in the following diagram :
+
+<img width="500" alt="diagram" src="diagram.png"/>
+
+Activities or fragments sould include only code related to data bindind.
+
+ViewModels contain the object to be displayed on the screen.
+
+Repo are responsible for asking the right data source and oragizing data for the ViewModel.
+
+DAO classes are using Room to make SQL requests.
+
+Model classes are entities use by Room to create table and logic objects to be displayed.
