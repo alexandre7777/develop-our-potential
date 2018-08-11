@@ -2,12 +2,12 @@ package com.alexandre.potentialgrowth.ui.home
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import com.alexandre.potentialgrowth.R
 import kotlinx.android.synthetic.main.activity_home.*
 import android.support.v4.view.ViewPager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.app.FragmentManager
+import com.alexandre.potentialgrowth.ui.MainActivity
 import com.alexandre.potentialgrowth.ui.home.dashboard.DashBoardFragment
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import com.alexandre.potentialgrowth.ui.home.reward.RewardFragment
@@ -15,19 +15,18 @@ import com.alexandre.potentialgrowth.ui.home.reward.RewardFragment
 /**
  * First activity with 3 tabs
  */
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : MainActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_home)
+        super.onCreate(savedInstanceState)
 
-        setSupportActionBar(toolbar)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
-        setupViewPager(viewPager);
-
-        tabs.setupWithViewPager(viewPager);
+        setupViewPager(viewPager)
+        tabs.setupWithViewPager(viewPager)
+        nav_view.menu.getItem(0).isChecked = true
     }
+
+
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)

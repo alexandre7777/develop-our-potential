@@ -26,6 +26,10 @@
         </intent-filter>
     </activity>
         <activity android:name=".ui.dashboarddetail.DashboardDetailActivity" />
+        <activity android:name=".ui.instruction.InstructionActivity" />
+        <activity android:name=".ui.yourdairy.YourDairyActivity" />
+        <activity android:name=".ui.licence.LicenceActivity" />
+        <activity android:name=".ui.favorites.FavoritesActivity" />
     </application>
 
 </manifest>

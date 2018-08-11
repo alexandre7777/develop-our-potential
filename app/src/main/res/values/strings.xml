@@ -18,4 +18,9 @@
     <string name="thumb_up">thumb up</string>
     <string name="explanation">Work every week on your %1$s skill and your progression for the last 7 days will be displayed !</string>
     <string name="done">Done</string>
+    <string name="instruction">Instruction</string>
+    <string name="licence">Licence</string>
+    <string name="your_dairy">Your dairy</string>
+    <string name="favorites">Favorites</string>
+    <string name="home">home</string>
 </resources>
