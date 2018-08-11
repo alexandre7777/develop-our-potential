@@ -50,7 +50,7 @@ class DashboardDetailActivity : AppCompatActivity() {
         })
 
 
-        val title = intent.getStringExtra(DashBoardFragment().INTENT_DETAIL_EXTRA_TEXT)
+        val title: String? = intent.getStringExtra(DashBoardFragment().INTENT_DETAIL_EXTRA_TEXT)
 
 
         setupView(id, title)
@@ -59,7 +59,7 @@ class DashboardDetailActivity : AppCompatActivity() {
     /**
      * Setup view colors, texts
      */
-    private fun setupView(type : Int, title : String) {
+    private fun setupView(type : Int, title : String?) {
         val learnItem = LearnItem(0, type, 0, "", "", "")
 
         backgroundCL.setBackgroundColor(learnItem.getColor(this))
