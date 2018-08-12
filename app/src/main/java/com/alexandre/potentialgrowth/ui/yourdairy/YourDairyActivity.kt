@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_your_dairy.*
-import android.support.design.widget.Snackbar
 
 class YourDairyActivity : MainActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,8 @@ class YourDairyActivity : MainActivity() {
 
     private fun initFAB() {
         fab.setOnClickListener({
-                
+            val addDialogFragment = AddDialogFragment()
+            addDialogFragment.show(supportFragmentManager, "Add")
 
         })
     }
