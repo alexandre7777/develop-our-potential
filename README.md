@@ -1,5 +1,5 @@
 # develop-our-potential
-Work in progress, Android app projet with the purpose to teach communication skills, conflict management, humain science from developer perspective.
+Work in progress, Android app project with the purpose to teach communication skills, conflict management, human science from developer perspective.
 
 The tab 1 shows your weekly goals : 
 
@@ -25,11 +25,11 @@ Files are organized as shown in the following diagram :
 
 <img width="500" alt="diagram" src="diagram.png"/>
 
-Activities or fragments sould include only code related to data bindind.
+Activities or fragments should include only code related to data binding.
 
 ViewModels contain the object to be displayed on the screen.
 
-Repo are responsible for asking the right data source and oragizing data for the ViewModel.
+Repo are responsible for asking the right data source and organizing data for the ViewModel.
 
 DAO classes are using Room to make SQL requests.
 
