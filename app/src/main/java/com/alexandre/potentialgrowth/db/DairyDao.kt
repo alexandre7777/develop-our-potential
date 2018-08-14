@@ -16,4 +16,7 @@ interface DairyDao{
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(dairy: Dairy)
+
+    @Query("SELECT idDairy, idType, dairyText FROM dairy")
+    fun getAllDairy(): LiveData<List<Dairy>>
 }

@@ -17,4 +17,8 @@ class DairyRepo(private val dairyDao: DairyDao, private val ioExecutor: Executor
             dairyDao.insert(dairy)
         }
     }
+
+    fun getAllDairy(): LiveData<List<Dairy>> {
+        return dairyDao.getAllDairy()
+    }
 }

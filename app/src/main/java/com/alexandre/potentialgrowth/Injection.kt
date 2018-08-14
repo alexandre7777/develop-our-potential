@@ -12,6 +12,7 @@ import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryKnowledg
 import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
 import com.alexandre.potentialgrowth.ui.home.reward.ViewModelFactoryReward
 import com.alexandre.potentialgrowth.ui.yourdairy.ViewModelFactoryAddDialog
+import com.alexandre.potentialgrowth.ui.yourdairy.ViewModelFactoryYourDairy
 import java.util.concurrent.Executors
 
 object Injection{
@@ -89,5 +90,13 @@ object Injection{
      */
     fun provideViewModelFactoryAddDialog(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryAddDialog(provideDairyRepo(context))
+    }
+
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
+    fun provideViewModelFactoryYourDairy(context: Context): ViewModelProvider.Factory {
+        return ViewModelFactoryYourDairy(provideDairyRepo(context))
     }
 }
