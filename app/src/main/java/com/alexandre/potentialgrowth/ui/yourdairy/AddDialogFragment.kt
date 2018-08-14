@@ -14,9 +14,9 @@ import com.alexandre.potentialgrowth.R
 import kotlinx.android.synthetic.main.dialog_add.*
 import android.widget.RadioButton
 
-
-
-
+/**
+ * Dialog fragment to create one dairy entry
+ */
 class AddDialogFragment : DialogFragment() {
 
     private lateinit var viewModelAddDialog: AddDialogFragmentViewModel

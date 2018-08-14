@@ -8,7 +8,7 @@ import com.alexandre.potentialgrowth.model.LearnItem
 import java.util.concurrent.Executor
 
 /**
- * Repository class that works with local data sources. This repo will handle item to learn.
+ * Repository class that works with local data sources. This repo will handle dairy entries.
  */
 class DairyRepo(private val dairyDao: DairyDao, private val ioExecutor: Executor) {
 

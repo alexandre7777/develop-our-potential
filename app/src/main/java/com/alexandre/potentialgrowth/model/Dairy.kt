@@ -4,6 +4,12 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Object to store dairy entry
+ * type 1 -> Goals
+ * type 2 -> Stories
+ * type 3 -> Ideas
+ */
 @Entity(tableName = "dairy")
 data class Dairy(@PrimaryKey(autoGenerate = true) val idDairy: Long,
                         @field:SerializedName("id_type") val idType: Int,
