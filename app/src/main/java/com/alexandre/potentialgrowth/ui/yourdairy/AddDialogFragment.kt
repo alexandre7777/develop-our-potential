@@ -5,12 +5,9 @@ import android.support.v4.app.DialogFragment
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioGroup
+import android.widget.*
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
-import android.widget.RadioButton
 
 /**
  * Dialog fragment to create one dairy entry
@@ -40,9 +37,9 @@ class AddDialogFragment : DialogFragment() {
 
         addBtn?.setOnClickListener() {
             if(typeRadioGroup != null) {
-                val radioButton = dialogView.findViewById(typeRadioGroup.checkedRadioButtonId) as RadioButton
+                val radioButton : RadioButton? = dialogView?.findViewById(typeRadioGroup.checkedRadioButtonId)
 
-                val id = when(radioButton.text.toString())
+                val id = when(radioButton?.text.toString())
                 {
                     resources.getString(R.string.goals) -> 1
                     resources.getString(R.string.stories) -> 2
@@ -50,8 +47,23 @@ class AddDialogFragment : DialogFragment() {
                     else -> 0
                 }
 
-                viewModelAddDialog.insertDairy(editText?.text.toString(), id)
-                dismiss()
+                if(id == 0)
+                {
+                    val toast = Toast.makeText(context?.applicationContext,
+                            resources.getString(R.string.error_dairy_topic), Toast.LENGTH_LONG)
+                    toast.show()
+                }
+                else if(editText?.text.toString().isEmpty())
+                {
+                    val toast = Toast.makeText(context?.applicationContext,
+                            resources.getString(R.string.error_dairy_empty_text), Toast.LENGTH_LONG)
+                    toast.show()
+                }
+                else
+                {
+                    viewModelAddDialog.insertDairy(editText?.text.toString(), id)
+                    dismiss()
+                }
             }
         }
 
