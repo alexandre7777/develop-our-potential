@@ -51,7 +51,7 @@
             android:src="@drawable/ic_comment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="@color/black"/>
+            app:backgroundTint="@color/black"/>
 
     </android.support.constraint.ConstraintLayout>
 
