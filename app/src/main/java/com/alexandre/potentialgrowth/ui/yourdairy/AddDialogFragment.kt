@@ -2,10 +2,10 @@ package com.alexandre.potentialgrowth.ui.yourdairy
 
 import android.app.AlertDialog
 import android.support.v4.app.DialogFragment
-import android.content.DialogInterface
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
 import com.alexandre.potentialgrowth.Injection
@@ -36,26 +36,26 @@ class AddDialogFragment : DialogFragment() {
         val editText : EditText? = dialogView?.findViewById(R.id.editText)
         val typeRadioGroup : RadioGroup? = dialogView?.findViewById(R.id.typeRadioGroup)
 
+        val addBtn : Button? = dialogView?.findViewById(R.id.addBtn)
+
+        addBtn?.setOnClickListener() {
+            if(typeRadioGroup != null) {
+                val radioButton = dialogView.findViewById(typeRadioGroup.checkedRadioButtonId) as RadioButton
+
+                val id = when(radioButton.text.toString())
+                {
+                    resources.getString(R.string.goals) -> 1
+                    resources.getString(R.string.stories) -> 2
+                    resources.getString(R.string.ideas) -> 3
+                    else -> 0
+                }
+
+                viewModelAddDialog.insertDairy(editText?.text.toString(), id)
+                dismiss()
+            }
+        }
+
         builder.setView(dialogView)
-                .setPositiveButton(R.string.add, DialogInterface.OnClickListener { dialog, id ->
-
-                    if(typeRadioGroup != null) {
-                        val radioButton = dialogView.findViewById(typeRadioGroup.checkedRadioButtonId) as RadioButton
-
-                        val id = when(radioButton.text.toString())
-                        {
-                            resources.getString(R.string.goals) -> 1
-                            resources.getString(R.string.stories) -> 2
-                            resources.getString(R.string.ideas) -> 3
-                            else -> 0
-                        }
-
-                        viewModelAddDialog.insertDairy(editText?.text.toString(), id)
-                    }
-                })
-                .setNegativeButton(R.string.cancel, DialogInterface.OnClickListener { dialog, id ->
-
-                })
         // Create the AlertDialog object and return it
         return builder.create()
     }
