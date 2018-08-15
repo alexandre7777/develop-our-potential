@@ -23,4 +23,13 @@
     <string name="your_dairy">Your dairy</string>
     <string name="favorites">Favorites</string>
     <string name="home">home</string>
+    <string name="write_your_text">Write your text</string>
+    <string name="goals">Goals</string>
+    <string name="stories">Stories</string>
+    <string name="ideas">Ideas</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="date_dairy">On the %1$s you had these :</string>
+    <string name="error_dairy_topic">Please select goals or stories or ideas.</string>
+    <string name="error_dairy_empty_text">Please write some text.</string>
 </resources>
