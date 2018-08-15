@@ -6,12 +6,10 @@ import android.content.DialogInterface
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.view.View
 import android.widget.EditText
 import android.widget.RadioGroup
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
-import kotlinx.android.synthetic.main.dialog_add.*
 import android.widget.RadioButton
 
 /**
