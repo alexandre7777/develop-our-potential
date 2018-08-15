@@ -3,13 +3,13 @@ package com.alexandre.potentialgrowth.ui.yourdairy
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.Dairy
 import com.alexandre.potentialgrowth.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_your_dairy.*
+import android.support.v7.widget.RecyclerView
 
 class YourDairyActivity : MainActivity() {
 
@@ -46,6 +46,7 @@ class YourDairyActivity : MainActivity() {
 
         viewModelYourDairy.dairyList.observe(this, Observer<List<Dairy>> {
             adapter.submitList(it)
+            list.layoutManager.smoothScrollToPosition(list, RecyclerView.State(), 0)
         })
     }
 }
