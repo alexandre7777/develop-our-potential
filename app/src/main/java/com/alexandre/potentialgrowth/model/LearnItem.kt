@@ -135,42 +135,35 @@ data class LearnItem(
     public fun getFavDrawable(context : Context) : Drawable? {
         when (idType){
             1 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+                return getWhiteFav(context)
             }
             2 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+                return getWhiteFav(context)
             }
             3 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_black)
+                return getBlackFav(context)
             }
             4 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+                return getWhiteFav(context)
             }
             5 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_black)
+                return getBlackFav(context)
             }
         }
-        return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+        return getWhiteFav(context)
     }
 
-    public fun getNotFavDrawable(context : Context) : Drawable? {
-        when (idType){
-            1 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
-            }
-            2 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
-            }
-            3 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_black)
-            }
-            4 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
-            }
-            5 -> {
-                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_black)
-            }
-        }
-        return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
+    private fun getBlackFav(context : Context) : Drawable?{
+        if(isFavorite)
+            return  ContextCompat.getDrawable(context, R.drawable.ic_full_star_black)
+        else
+            return  ContextCompat.getDrawable(context, R.drawable.ic_empty_star_black)
+    }
+
+    private fun getWhiteFav(context : Context) : Drawable?{
+        if(isFavorite)
+            return  ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+        else
+            return  ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
     }
 }

@@ -60,6 +60,8 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
             img.setImageDrawable(viewModelKnowledge.learnItem.value?.getDrawable(img.context))
 
+            imgFav.setImageDrawable(viewModelKnowledge.learnItem.value?.getFavDrawable(img.context))
+
             viewModelKnowledge.learnItem.value?.getColor(container.context)?.let { color ->
                 container.setBackgroundColor(color)
                 nestedScroll.setBackgroundColor(color)
