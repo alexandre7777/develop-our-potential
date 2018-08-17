@@ -60,7 +60,7 @@ class DashboardDetailActivity : AppCompatActivity() {
      * Setup view colors, texts
      */
     private fun setupView(type : Int, title : String?) {
-        val learnItem = LearnItem(0, type, 0, "", "", "")
+        val learnItem = LearnItem(0, type, 0, "", "", "", false)
 
         backgroundCL.setBackgroundColor(learnItem.getColor(this))
 

@@ -23,7 +23,8 @@ data class LearnItem(
         @field:SerializedName("order_learn_item") val orderLearnItem: Int,
         @field:SerializedName("name") val name: String,
         @field:SerializedName("description") val description: String?,
-        @field:SerializedName("img_url") val imgUrl: String) {
+        @field:SerializedName("img_url") val imgUrl: String,
+        @field:SerializedName("is_favorite") val isFavorite: Boolean) {
 
 
     public fun getDrawable(context : Context) : Drawable? {

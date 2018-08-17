@@ -19,9 +19,9 @@ interface LearnItemDao{
     @Insert
     fun insertAll(learnItems: List<LearnItem>)
 
-    @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl FROM learn_item ORDER BY orderLearnItem")
+    @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl, isFavorite FROM learn_item ORDER BY orderLearnItem")
     fun getAllLearnItem(): LiveData<List<LearnItem>>
 
-    @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl FROM learn_item WHERE idLearnItem = :id")
+    @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl, isFavorite FROM learn_item WHERE idLearnItem = :id")
     fun getLearnItem(id : Long): LiveData<LearnItem>
 }
