@@ -87,6 +87,10 @@ class KnowledgeDetailActivity : AppCompatActivity() {
             commentBtn.setOnClickListener({
                 viewModelKnowledge.commentContribution(viewModelKnowledge.learnItem.value?.idLearnItem, commentEd.text.toString())
             })
+
+            imgFav.setOnClickListener {
+                viewModelKnowledge.updateFav(viewModelKnowledge.learnItem.value)
+            }
         })
 
         viewModelKnowledge.doneItNum.observe(this, Observer<Int> {
@@ -98,6 +102,7 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 congratulationTxt.visibility = View.VISIBLE
             }
         })
+
 
 
     }

@@ -24,4 +24,7 @@ interface LearnItemDao{
 
     @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl, isFavorite FROM learn_item WHERE idLearnItem = :id")
     fun getLearnItem(id : Long): LiveData<LearnItem>
+
+    @Query("UPDATE learn_item SET isFavorite = :isFavorite WHERE idLearnItem = :idLearnItem")
+    fun updateFavorite(idLearnItem : Long, isFavorite : Boolean)
 }

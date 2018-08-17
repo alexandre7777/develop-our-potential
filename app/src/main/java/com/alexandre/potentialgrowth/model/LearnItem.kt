@@ -131,4 +131,46 @@ data class LearnItem(
         }
         return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_black)
     }
+
+    public fun getFavDrawable(context : Context) : Drawable? {
+        when (idType){
+            1 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+            }
+            2 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+            }
+            3 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_black)
+            }
+            4 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+            }
+            5 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_full_star_black)
+            }
+        }
+        return ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+    }
+
+    public fun getNotFavDrawable(context : Context) : Drawable? {
+        when (idType){
+            1 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
+            }
+            2 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
+            }
+            3 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_black)
+            }
+            4 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
+            }
+            5 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_black)
+            }
+        }
+        return ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
+    }
 }

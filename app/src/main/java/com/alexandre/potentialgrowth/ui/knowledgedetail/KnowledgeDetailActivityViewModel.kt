@@ -22,6 +22,14 @@ class KnowledgeDetailActivityViewModel(private val learnItemRepo: LearnItemRepo,
     /**
      * store a new "I have done it"
      */
+    public fun updateFav(learnItem: LearnItem?) {
+        if (learnItem != null)
+            learnItemRepo.updateFav(learnItem.idLearnItem, !learnItem.isFavorite)
+    }
+
+    /**
+     * store a new "I have done it"
+     */
     public fun insertContribution(idLearnItem: Long?) {
         if (idLearnItem != null) {
             contributionRepo.insert(Contribution(idLearnItem = idLearnItem, idType = 1, time = Date(), result = "", idContribution = 0))
