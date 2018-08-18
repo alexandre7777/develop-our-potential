@@ -22,6 +22,9 @@ interface LearnItemDao{
     @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl, isFavorite FROM learn_item ORDER BY orderLearnItem")
     fun getAllLearnItem(): LiveData<List<LearnItem>>
 
+    @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl, isFavorite FROM learn_item  WHERE isFavorite = 1 ORDER BY orderLearnItem")
+    fun getFavAllLearnItem(): LiveData<List<LearnItem>>
+
     @Query("SELECT idLearnItem, idType, orderLearnItem, name, description, imgUrl, isFavorite FROM learn_item WHERE idLearnItem = :id")
     fun getLearnItem(id : Long): LiveData<LearnItem>
 

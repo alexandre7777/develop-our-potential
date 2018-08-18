@@ -30,6 +30,10 @@ class LearnItemRepo(private val learnItemDao: LearnItemDao, private val ioExecut
         return learnItemDao.getAllLearnItem()
     }
 
+    fun getAllFavLearnItem(): LiveData<List<LearnItem>> {
+        return learnItemDao.getFavAllLearnItem()
+    }
+
     fun getLearnItemById(id : Long): LiveData<LearnItem> {
         return learnItemDao.getLearnItem(id)
     }

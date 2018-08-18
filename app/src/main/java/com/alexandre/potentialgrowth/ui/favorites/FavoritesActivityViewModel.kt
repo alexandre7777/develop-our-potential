@@ -6,7 +6,7 @@ import com.alexandre.potentialgrowth.model.LearnItem
 
 class FavoritesActivityViewModel(private val learnItemRepo: LearnItemRepo) : ViewModel() {
 
-    var mFavLearnItem = learnItemRepo.getAllLearnItem()
+    var mFavLearnItem = learnItemRepo.getAllFavLearnItem()
 
     /**
      * store a new "I have done it"
