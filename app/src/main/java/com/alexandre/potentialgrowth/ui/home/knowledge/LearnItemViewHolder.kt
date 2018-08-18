@@ -17,26 +17,29 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val name: TextView = view.findViewById(R.id.name)
     private val description: TextView = view.findViewById(R.id.description)
     private val img: ImageView = view.findViewById(R.id.img)
+    private val imgFav: ImageView = view.findViewById(R.id.imgFav)
     private val container: ConstraintLayout = view.findViewById(R.id.container)
 
 
     private var learnItem: LearnItem? = null
 
-    fun bind(learnItem: LearnItem?, listener: (View?, LearnItem) -> Unit) {
+    fun bind(learnItem: LearnItem?, listener: (View?, LearnItem) -> Unit, listenerFav: (View?, LearnItem) -> Unit) {
         if (learnItem != null) {
-            showRepoData(learnItem, listener)
+            showRepoData(learnItem, listener, listenerFav)
         }
     }
 
     /**
      * Set colors and text for the item
      */
-    private fun showRepoData(learnItem: LearnItem, listener: (View?, LearnItem) -> Unit) {
+    private fun showRepoData(learnItem: LearnItem, listener: (View?, LearnItem) -> Unit, listenerFav: (View?, LearnItem) -> Unit) {
         this.learnItem = learnItem
         name.text = learnItem.name
         description.text = learnItem.description
 
         img.setImageDrawable(learnItem.getDrawable(img.context))
+
+        imgFav.setImageDrawable(learnItem.getFavDrawable(img.context))
 
         container.setBackgroundColor(learnItem.getColor(container.context))
 
@@ -48,6 +51,10 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 listener(v, learnItem)
             }
         })
+
+        imgFav.setOnClickListener{
+            listenerFav(it, learnItem)
+        }
     }
 
     companion object {

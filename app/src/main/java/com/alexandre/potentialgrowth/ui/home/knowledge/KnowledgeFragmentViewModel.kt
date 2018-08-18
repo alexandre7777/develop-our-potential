@@ -10,4 +10,12 @@ import com.alexandre.potentialgrowth.model.LearnItem
 class KnowledgeFragmentViewModel(private val repository: LearnItemRepo) : ViewModel() {
 
     var mLearnItem = repository.getAllLearnItem()
+
+    /**
+     * store a new "I have done it"
+     */
+    public fun updateFav(learnItem: LearnItem?) {
+        if (learnItem != null)
+            repository.updateFav(learnItem.idLearnItem, !learnItem.isFavorite)
+    }
 }
