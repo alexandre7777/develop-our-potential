@@ -16,6 +16,7 @@ import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.ui.commonlearnitemlist.LearnItemAdapter
 import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.fragment_knowledge.*
 

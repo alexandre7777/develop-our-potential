@@ -1,4 +1,4 @@
-package com.alexandre.potentialgrowth.ui.home.knowledge
+package com.alexandre.potentialgrowth.ui.commonlearnitemlist
 
 import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
