@@ -18,8 +18,9 @@ import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.activity_favorites.*
 import android.support.design.widget.Snackbar
 
-
-
+/**
+ * Activity to display a list of favorites
+ */
 class FavoritesActivity : MainActivity() {
 
     private lateinit var viewModelFavorites: FavoritesActivityViewModel

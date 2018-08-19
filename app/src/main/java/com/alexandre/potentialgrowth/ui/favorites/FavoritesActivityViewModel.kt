@@ -8,6 +8,9 @@ class FavoritesActivityViewModel(private val learnItemRepo: LearnItemRepo) : Vie
 
     var mFavLearnItem = learnItemRepo.getAllFavLearnItem()
 
+    /**
+     * hold the last deleted learn item in order to recreate if needed
+     */
     var lastDeletedLearnItem : LearnItem? = null
 
     /**
@@ -20,6 +23,9 @@ class FavoritesActivityViewModel(private val learnItemRepo: LearnItemRepo) : Vie
         }
     }
 
+    /**
+     * reverse the last deleted favorite
+     */
     public fun cancelDeleteFav()
     {
         val _lastDeletedLearnItem = lastDeletedLearnItem
