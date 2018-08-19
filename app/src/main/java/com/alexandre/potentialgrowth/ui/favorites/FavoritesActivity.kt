@@ -16,6 +16,9 @@ import com.alexandre.potentialgrowth.ui.MainActivity
 import com.alexandre.potentialgrowth.ui.commonlearnitemlist.LearnItemAdapter
 import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.activity_favorites.*
+import android.support.design.widget.Snackbar
+
+
 
 class FavoritesActivity : MainActivity() {
 
@@ -48,6 +51,14 @@ class FavoritesActivity : MainActivity() {
 
     }, { view: View?, learnItem: LearnItem ->
         viewModelFavorites.updateFav(learnItem)
+
+        val snackbar = Snackbar
+                .make(list, resources.getString(R.string.favorite_deleted), Snackbar.LENGTH_LONG)
+                .setAction(resources.getString(R.string.undo)) {
+                    viewModelFavorites.cancelDeleteFav()
+                }
+
+        snackbar.show()
     })
 
 

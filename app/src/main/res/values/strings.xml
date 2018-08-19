@@ -32,4 +32,6 @@
     <string name="date_dairy">On the %1$s you had these :</string>
     <string name="error_dairy_topic">Please select goals or stories or ideas.</string>
     <string name="error_dairy_empty_text">Please write some text.</string>
+    <string name="undo">UNDO</string>
+    <string name="favorite_deleted">Favorite deleted</string>
 </resources>
