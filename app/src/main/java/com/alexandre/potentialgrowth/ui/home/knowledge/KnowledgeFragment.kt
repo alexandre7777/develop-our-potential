@@ -16,6 +16,7 @@ import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.ui.commonlearnitemlist.LearnItemAdapter
 import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.fragment_knowledge.*
 
@@ -28,7 +29,7 @@ class KnowledgeFragment : Fragment(){
 
     private lateinit var viewModel: KnowledgeFragmentViewModel
 
-    private val adapter = LearnItemAdapter() { view: View?, learnItem: LearnItem ->
+    private val adapter = LearnItemAdapter( { view: View?, learnItem: LearnItem ->
         val intent = Intent(activity, KnowledgeDetailActivity::class.java).apply {
             putExtra(INTENT_DETAIL_EXTRA, learnItem.idLearnItem)
         }
@@ -52,7 +53,10 @@ class KnowledgeFragment : Fragment(){
 
 
         ActivityCompat.startActivity(activity as Activity, intent, activityOptions.toBundle())
-    }
+    }, {
+        view: View?, learnItem: LearnItem ->
+        viewModel.updateFav(learnItem)
+    })
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

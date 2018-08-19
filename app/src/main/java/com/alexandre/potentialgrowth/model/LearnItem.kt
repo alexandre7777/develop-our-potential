@@ -23,7 +23,8 @@ data class LearnItem(
         @field:SerializedName("order_learn_item") val orderLearnItem: Int,
         @field:SerializedName("name") val name: String,
         @field:SerializedName("description") val description: String?,
-        @field:SerializedName("img_url") val imgUrl: String) {
+        @field:SerializedName("img_url") val imgUrl: String,
+        @field:SerializedName("is_favorite") val isFavorite: Boolean) {
 
 
     public fun getDrawable(context : Context) : Drawable? {
@@ -129,5 +130,40 @@ data class LearnItem(
             }
         }
         return ContextCompat.getDrawable(context, R.drawable.circular_progress_bar_black)
+    }
+
+    public fun getFavDrawable(context : Context) : Drawable? {
+        when (idType){
+            1 -> {
+                return getWhiteFav(context)
+            }
+            2 -> {
+                return getWhiteFav(context)
+            }
+            3 -> {
+                return getBlackFav(context)
+            }
+            4 -> {
+                return getWhiteFav(context)
+            }
+            5 -> {
+                return getBlackFav(context)
+            }
+        }
+        return getWhiteFav(context)
+    }
+
+    private fun getBlackFav(context : Context) : Drawable?{
+        if(isFavorite)
+            return  ContextCompat.getDrawable(context, R.drawable.ic_full_star_black)
+        else
+            return  ContextCompat.getDrawable(context, R.drawable.ic_empty_star_black)
+    }
+
+    private fun getWhiteFav(context : Context) : Drawable?{
+        if(isFavorite)
+            return  ContextCompat.getDrawable(context, R.drawable.ic_full_star_white)
+        else
+            return  ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
     }
 }

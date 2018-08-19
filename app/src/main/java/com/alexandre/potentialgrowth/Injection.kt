@@ -7,6 +7,7 @@ import com.alexandre.potentialgrowth.data.DairyRepo
 import com.alexandre.potentialgrowth.data.LearnItemRepo
 import com.alexandre.potentialgrowth.db.LearnItemDatabase
 import com.alexandre.potentialgrowth.ui.dashboarddetail.ViewModelFactoryDashboardDetail
+import com.alexandre.potentialgrowth.ui.favorites.ViewModelFactoryFavoritesActivity
 import com.alexandre.potentialgrowth.ui.home.dashboard.ViewModelFactoryDashboard
 import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryKnowledgeDetail
 import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
@@ -98,5 +99,13 @@ object Injection{
      */
     fun provideViewModelFactoryYourDairy(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryYourDairy(provideDairyRepo(context))
+    }
+
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
+    fun provideViewModelFactoryFavorites(context: Context): ViewModelProvider.Factory {
+        return ViewModelFactoryFavoritesActivity(provideLearnItemRepo(context))
     }
 }

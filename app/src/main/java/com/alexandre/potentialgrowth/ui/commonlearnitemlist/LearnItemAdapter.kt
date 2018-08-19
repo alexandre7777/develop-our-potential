@@ -1,4 +1,4 @@
-package com.alexandre.potentialgrowth.ui.home.knowledge
+package com.alexandre.potentialgrowth.ui.commonlearnitemlist
 
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
@@ -10,7 +10,7 @@ import com.alexandre.potentialgrowth.model.LearnItem
 /**
  * Adapter for the Knowledge tab on the home page
  */
-class LearnItemAdapter(val listener: (View?, LearnItem) -> Unit) : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
+class LearnItemAdapter(private val listener: (View?, LearnItem) -> Unit, private val listenerFav: (View?, LearnItem) -> Unit) : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return LearnItemViewHolder.create(parent)
@@ -19,7 +19,7 @@ class LearnItemAdapter(val listener: (View?, LearnItem) -> Unit) : ListAdapter<L
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val repoItem = getItem(position)
         if (repoItem != null) {
-            (holder as LearnItemViewHolder).bind(repoItem, listener)
+            (holder as LearnItemViewHolder).bind(repoItem, listener, listenerFav)
         }
     }
 

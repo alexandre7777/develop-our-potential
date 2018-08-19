@@ -3,6 +3,7 @@ package com.alexandre.potentialgrowth.data
 import android.arch.lifecycle.LiveData
 import com.alexandre.potentialgrowth.db.LearnItemDao
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.ui.favorites.FavoritesActivity
 import java.util.concurrent.Executor
 
 /**
@@ -16,11 +17,21 @@ class LearnItemRepo(private val learnItemDao: LearnItemDao, private val ioExecut
         }
     }
 
+    fun updateFav(idLearnItem: Long, isFavorites: Boolean) {
+        ioExecutor.execute {
+            learnItemDao.updateFavorite(idLearnItem, isFavorites)
+        }
+    }
+
     /**
      * Get all learn items
      */
     fun getAllLearnItem(): LiveData<List<LearnItem>> {
         return learnItemDao.getAllLearnItem()
+    }
+
+    fun getAllFavLearnItem(): LiveData<List<LearnItem>> {
+        return learnItemDao.getFavAllLearnItem()
     }
 
     fun getLearnItemById(id : Long): LiveData<LearnItem> {
