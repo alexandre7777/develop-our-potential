@@ -4,8 +4,9 @@
 		"id_type":2,
 		"order_learn_item":1,
 		"name":"Make everyday matter",
-		"description":"Learn new a topic everyday, contribute to your Github everyday",
-		"img_url":"https://images.pexels.com/photos/888992/pexels-photo-888992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+		"description":"Learn new a topic everyday.\nRead a book while commuting.\nWatch new video on Youtube.\nFind a new blog to get inspired.\nMake your own research.\nCreate something everyday.\nContribute to your Github everyday.",
+		"img_url":"https://images.pexels.com/photos/888992/pexels-photo-888992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":2,
@@ -13,7 +14,8 @@
 		"order_learn_item":2,
 		"name":"Do not go to war",
 		"description":"Resist the temptation of augmenting, making threat and personal attack.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":3,
@@ -21,39 +23,44 @@
 		"order_learn_item":3,
 		"name":"Visit family",
 		"description":"",
-		"img_url":""
+		"img_url":"",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":4,
 		"id_type":1,
 		"order_learn_item":4,
 		"name":"Calm your emotions",
-		"description":"Correct your vision : The other person is not trying to destroy you, he might be in danger of something.\n Focus on your breading : focus on yourself.\n Take the shoot : do not react to the other person.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"description":"Correct your vision : The other person is not trying to destroy you, he might be in danger.\n Focus on your breathing : focus on yourself.\n Take the shoot : do not react to the other person.",
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":5,
 		"id_type":3,
 		"order_learn_item":5,
 		"name":"Work on your passion",
-		"description":"",
-		"img_url":""
+		"description":"Your passion will change from day-to-day. \nFind a problem in front of you and solve it. Be useful and generous.\nJust start doing, do wait.\nYour passion follows you.",
+		"img_url":"",
+		"youtube_url":"https://www.youtube.com/watch?v=6MBaFL7sCb8"
 	},
 	{
 		"id_learn_item":6,
 		"id_type":1,
 		"order_learn_item":6,
 		"name":"Calm others people emotions",
-		"description":"Acknowledge what the other is saying, say that you are listening. Show that you want to discuss about it.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"description":"Avoid telling the other to calm down.\nAcknowledge what the other is saying, say that you are listening. Show that you want to discuss about it.",
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":7,
 		"id_type":1,
 		"order_learn_item":7,
 		"name":"Understand rather than be understood",
-		"description":"Ask question, see with his eyes, feel the way he feels.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"description":"Ask question and listen to the answer.\nLook to be convince rather to convince.\nSee with his eyes, feel the way he feels.",
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":8,
@@ -61,7 +68,8 @@
 		"order_learn_item":8,
 		"name":"Exercise",
 		"description":"",
-		"img_url":""
+		"img_url":"",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":9,
@@ -69,7 +77,8 @@
 		"order_learn_item":9,
 		"name":"Find yourself",
 		"description":"",
-		"img_url":""
+		"img_url":"",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":10,
@@ -77,14 +86,15 @@
 		"order_learn_item":10,
 		"name":"Made him understand that you understood",
 		"description":"Reformulate his thought, ask if ou are right.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":11,
 		"id_type":5,
 		"order_learn_item":11,
 		"name":"Are you afraid of change ?",
-		"description":"\"Don't wait until they tell you you are ready, get in there quickly. The word may say you are allow to yet. Allow yourself permission to fail. Do not even bother asking get in there.The word is yours.\"\n- Peter Dinklage\n\"Ever tried ever failed no matter fail again fail better.\"\n- Samuel Beckett",
+		"description":"\"Don't wait until they tell you are ready, get in there quickly. The word may say you are allowed to yet. Allow yourself permission to fail. Do not even bother asking get in there.The word is yours.\"\n- Peter Dinklage\n\"Ever tried ever failed no matter fail again fail better.\"\n- Samuel Beckett",
 		"img_url":"",
 		"youtube_url":"https://www.youtube.com/watch?v=CuEfEv0OlsY"
 	},
@@ -93,16 +103,18 @@
 		"id_type":1,
 		"order_learn_item":12,
 		"name":"Juxtapose your point of view to his rather than oppose it",
-		"description":"Do not use the word 'but' instead use 'and'.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"description":"Start describing your point of view by starting sentences with \"In my point of view\", \"on the other hand\" or \"at the same time\".\nDo not use the word 'but' instead use 'and'.",
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":13,
 		"id_type":1,
 		"order_learn_item":13,
 		"name":"Propose a solution",
-		"description":"If a win-win solution appears propose it, if not may be a compromise could be possible.",
-		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+		"description":"If a win-win solution appears propose it, if not we ask if the other see a solution, may be a compromise could be possible.",
+		"img_url":"https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":14,
@@ -110,15 +122,17 @@
 		"order_learn_item":14,
 		"name":"Volunteer",
 		"description":"",
-		"img_url":""
+		"img_url":"",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":15,
 		"id_type":3,
 		"order_learn_item":15,
 		"name":"Modify the perception of yourself",
-		"description":"",
-		"img_url":""
+		"description":"In life there is no bad or wrong answers. You can learn everything on the internet. One step at the time change little things slowly but truly. You can make it.",
+		"img_url":"",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":16,
@@ -126,14 +140,16 @@
 		"order_learn_item":16,
 		"name":"Eat well",
 		"description":"",
-		"img_url":""
+		"img_url":"",
+		"youtube_url":""
 	},
 	{
 		"id_learn_item":17,
 		"id_type":5,
 		"order_learn_item":17,
 		"name":"Visualise what you want",
-		"description":"",
-		"img_url":""
+		"description":"You should think advance of the new task you need to carry out. You should have a long-term goal, and divide it into smaller tasks you can do every day.\nBe focus once you have started the task give every you get, then review it later.",
+		"img_url":"",
+		"youtube_url":""
 	}
 ]
