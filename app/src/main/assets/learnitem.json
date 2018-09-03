@@ -84,8 +84,9 @@
 		"id_type":5,
 		"order_learn_item":11,
 		"name":"Are you afraid of change ?",
-		"description":"",
-		"img_url":""
+		"description":"\"Don't wait until they tell you you are ready, get in there quickly. The word may say you are allow to yet. Allow yourself permission to fail. Do not even bother asking get in there.The word is yours.\"\n- Peter Dinklage\n\"Ever tried ever failed no matter fail again fail better.\"\n- Samuel Beckett",
+		"img_url":"",
+		"youtube_url":"https://www.youtube.com/watch?v=CuEfEv0OlsY"
 	},
 	{
 		"id_learn_item":12,
