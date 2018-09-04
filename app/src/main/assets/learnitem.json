@@ -4,7 +4,7 @@
 		"id_type":2,
 		"order_learn_item":1,
 		"name":"Make everyday matter",
-		"description":"Learn new a topic everyday.\nRead a book while commuting.\nWatch new video on Youtube.\nFind a new blog to get inspired.\nMake your own research.\nCreate something everyday.\nContribute to your Github everyday.",
+		"description":"Learn new a topic <b>everyday</b>.\nRead a book while commuting.\nWatch new video on Youtube.\nFind a new blog to get inspired.\nMake your own research.\nCreate something everyday.\nContribute to your Github everyday.",
 		"img_url":"https://images.pexels.com/photos/888992/pexels-photo-888992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 		"youtube_url":""
 	},
@@ -21,8 +21,8 @@
 		"id_learn_item":3,
 		"id_type":2,
 		"order_learn_item":3,
-		"name":"Visit family",
-		"description":"",
+		"name":"Visit or call family",
+		"description":"Call a relative, for 5 minutes.\nThose are the most important people you know.",
 		"img_url":"",
 		"youtube_url":""
 	},
@@ -67,7 +67,7 @@
 		"id_type":4,
 		"order_learn_item":8,
 		"name":"Exercise",
-		"description":"",
+		"description":"Exercising causes the body to make chemicals that can help you to feel good. Exercise can help people sleep better.",
 		"img_url":"",
 		"youtube_url":""
 	},
@@ -76,7 +76,7 @@
 		"id_type":5,
 		"order_learn_item":9,
 		"name":"Find yourself",
-		"description":"",
+		"description":"Remember where do you come from, remember what do you love and go for it. Take an hour a day to move closer to your gaols. Don't be afraid to change goals or purposes, <b>life change!</b>",
 		"img_url":"",
 		"youtube_url":""
 	},
@@ -94,7 +94,7 @@
 		"id_type":5,
 		"order_learn_item":11,
 		"name":"Are you afraid of change ?",
-		"description":"\"Don't wait until they tell you are ready, get in there quickly. The word may say you are allowed to yet. Allow yourself permission to fail. Do not even bother asking get in there.The word is yours.\"\n- Peter Dinklage\n\"Ever tried ever failed no matter fail again fail better.\"\n- Samuel Beckett",
+		"description":"\"Don't wait until they tell you are ready, <b>get in there quickly</b>. The word may say you are allowed to yet. Allow yourself permission to fail. Do not even bother asking get in there.The word is yours.\"\n- Peter Dinklage\n\"Ever tried ever failed no matter fail again fail better.\"\n- Samuel Beckett",
 		"img_url":"",
 		"youtube_url":"https://www.youtube.com/watch?v=CuEfEv0OlsY"
 	},
@@ -121,7 +121,7 @@
 		"id_type":2,
 		"order_learn_item":14,
 		"name":"Volunteer",
-		"description":"",
+		"description":"Find a group of people with a purpose and help them.\nIt could be in your sport, art organisation...",
 		"img_url":"",
 		"youtube_url":""
 	},
@@ -139,7 +139,7 @@
 		"id_type":4,
 		"order_learn_item":16,
 		"name":"Eat well",
-		"description":"",
+		"description":"Eat <b>fruits</b> and <b>vegetables</b>, cook your own meals. Eat organic.",
 		"img_url":"",
 		"youtube_url":""
 	},
@@ -149,6 +149,24 @@
 		"order_learn_item":17,
 		"name":"Visualise what you want",
 		"description":"You should think advance of the new task you need to carry out. You should have a long-term goal, and divide it into smaller tasks you can do every day.\nBe focus once you have started the task give every you get, then review it later.",
+		"img_url":"",
+		"youtube_url":""
+	},
+	{
+		"id_learn_item":18,
+		"id_type":4,
+		"order_learn_item":18,
+		"name":"Walk",
+		"description":"Walk a little more every day. Alight a bus stop before and walk, this will train your body.",
+		"img_url":"",
+		"youtube_url":""
+	},
+	{
+		"id_learn_item":19,
+		"id_type":4,
+		"order_learn_item":19,
+		"name":"Take the stairs",
+		"description":"<b>Power from the legs</b>, get a slice of your legs day every day.",
 		"img_url":"",
 		"youtube_url":""
 	}
