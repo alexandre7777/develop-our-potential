@@ -61,7 +61,8 @@
             app:layout_constraintTop_toBottomOf="@+id/name"
             android:lines="2"
             android:ellipsize="end"
-            android:textSize="@dimen/text_medium"/>
+            android:textSize="@dimen/text_medium"
+            android:lineSpacingExtra="8dp"/>
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

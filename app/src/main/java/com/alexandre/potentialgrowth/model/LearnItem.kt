@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
 import com.alexandre.potentialgrowth.R
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 /**
  * Object to store item to learn
@@ -24,7 +25,7 @@ data class LearnItem(
         @field:SerializedName("name") val name: String,
         @field:SerializedName("description") val description: String?,
         @field:SerializedName("img_url") val imgUrl: String,
-        @field:SerializedName("is_favorite") val isFavorite: Boolean) {
+        @field:SerializedName("is_favorite") val isFavorite: Boolean) : Serializable {
 
 
     public fun getDrawable(context : Context) : Drawable? {

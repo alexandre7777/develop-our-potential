@@ -107,41 +107,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/doneBtn" />
 
-            <EditText
-                android:id="@+id/commentEd"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/white"
-                android:hint="@string/your_comments"
-                android:inputType="text"
-                android:lines="5"
-                android:maxLines="5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/doneBtn" />
-
-            <Button
-                android:id="@+id/commentBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/comment"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/commentEd" />
-
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/commentRl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/commentBtn">
+                app:layout_constraintTop_toBottomOf="@+id/doneBtn">
 
             </android.support.v7.widget.RecyclerView>
         </android.support.constraint.ConstraintLayout>

@@ -4,7 +4,6 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
@@ -43,17 +42,10 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        ViewCompat.setTransitionName(name, VIEW_NAME_TEXT_TITLE)
-        ViewCompat.setTransitionName(description, VIEW_NAME_TEXT_DESCRIPTION)
-        ViewCompat.setTransitionName(img, VIEW_NAME_TYPE_IMAGE)
-        ViewCompat.setTransitionName(container, VIEW_NAME_CONTAINER_BACKGROUND)
-        ViewCompat.setTransitionName(appBarLayout, VIEW_NAME_APPBARLAYOUT)
-
         val id = intent.getLongExtra(KnowledgeFragment().INTENT_DETAIL_EXTRA, 1)
 
         viewModelKnowledge = ViewModelProviders.of(this, Injection.provideViewModelFactoryDetail(this, id))
                 .get(KnowledgeDetailActivityViewModel::class.java)
-
 
         viewModelKnowledge.learnItem.observe(this, Observer<LearnItem> {
             name.text = viewModelKnowledge.learnItem.value?.name
@@ -74,7 +66,6 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 container.setBackgroundColor(color)
                 nestedScroll.setBackgroundColor(color)
                 doneBtn.setTextColor(color)
-                commentBtn.setTextColor(color)
             }
 
             viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let { textColor ->
@@ -87,20 +78,17 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
             viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let { color ->
                 doneBtn.setBackgroundColor(color)
-                commentBtn.setBackgroundColor(color)
             }
 
             doneBtn.setOnClickListener{
                 viewModelKnowledge.insertContribution(viewModelKnowledge.learnItem.value?.idLearnItem)
             }
 
-            commentBtn.setOnClickListener{
-                viewModelKnowledge.commentContribution(viewModelKnowledge.learnItem.value?.idLearnItem, commentEd.text.toString())
-            }
-
             imgFav.setOnClickListener {
                 viewModelKnowledge.updateFav(viewModelKnowledge.learnItem.value)
             }
+
+            initFAB(viewModelKnowledge.learnItem.value)
         })
 
         viewModelKnowledge.doneItNum.observe(this, Observer<Int> {
@@ -112,9 +100,6 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 congratulationTxt.visibility = View.VISIBLE
             }
         })
-
-
-
     }
 
     /**
@@ -127,5 +112,12 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         viewModelKnowledge.commentList.observe(this, Observer<List<Contribution>> {
             adapter.submitList(it)
         })
+    }
+
+    private fun initFAB(learnItem: LearnItem?) {
+        fab.setOnClickListener{
+            val addDialogFragment = learnItem?.let { it1 -> AddDialogCommentFragment().newInstance(it1) }
+            addDialogFragment?.show(supportFragmentManager, "Add")
+        }
     }
 }
