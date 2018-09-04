@@ -108,7 +108,7 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 doneBtn.visibility = View.VISIBLE
                 congratulationTxt.visibility = View.GONE
             } else {
-                doneBtn.visibility = View.GONE
+                doneBtn.visibility = View.INVISIBLE
                 congratulationTxt.visibility = View.VISIBLE
             }
         })
