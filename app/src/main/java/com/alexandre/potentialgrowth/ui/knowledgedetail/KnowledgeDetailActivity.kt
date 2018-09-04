@@ -2,6 +2,7 @@ package com.alexandre.potentialgrowth.ui.knowledgedetail
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -65,7 +66,6 @@ class KnowledgeDetailActivity : AppCompatActivity() {
             viewModelKnowledge.learnItem.value?.getColor(container.context)?.let { color ->
                 container.setBackgroundColor(color)
                 nestedScroll.setBackgroundColor(color)
-                doneBtn.setTextColor(color)
             }
 
             viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let { textColor ->
@@ -78,6 +78,7 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
             viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let { color ->
                 doneBtn.setBackgroundColor(color)
+                fab.backgroundTintList = ColorStateList.valueOf(color)
             }
 
             doneBtn.setOnClickListener{

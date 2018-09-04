@@ -5,6 +5,7 @@ import android.support.v4.app.DialogFragment
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.widget.*
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
@@ -44,6 +45,10 @@ class AddDialogCommentFragment : DialogFragment() {
 
         val dialogView = inflater?.inflate(R.layout.dialog_add_comment, null)
 
+        val backgroundDialog : ConstraintLayout? = dialogView?.findViewById(R.id.backgroundDialog)
+
+        val textView : TextView? = dialogView?.findViewById(R.id.textView)
+
         val editText : EditText? = dialogView?.findViewById(R.id.editText)
 
         val addBtn : Button? = dialogView?.findViewById(R.id.addBtn)
@@ -52,6 +57,12 @@ class AddDialogCommentFragment : DialogFragment() {
             viewModelAddDialog.commentContribution(learnItem.idLearnItem, editText?.text.toString())
             dismiss()
         }
+
+        context?.let { learnItem?.getColor(it) }?.let { backgroundDialog?.setBackgroundColor(it) }
+
+        context?.let { learnItem?.getTextColor(it) }?.let { textView?.setTextColor(it) }
+
+        context?.let { learnItem?.getOppositeColor(it) }?.let { addBtn?.setBackgroundColor(it) }
 
         builder.setView(dialogView)
         // Create the AlertDialog object and return it
