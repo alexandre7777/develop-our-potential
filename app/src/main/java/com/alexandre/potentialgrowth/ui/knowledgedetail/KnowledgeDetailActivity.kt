@@ -2,10 +2,12 @@ package com.alexandre.potentialgrowth.ui.knowledgedetail
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.text.Html
 import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
@@ -21,15 +23,15 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModelKnowledge: KnowledgeDetailActivityViewModel
 
-    public val VIEW_NAME_TYPE_IMAGE = "detail:type:image"
+    val VIEW_NAME_TYPE_IMAGE = "detail:type:image"
 
-    public val VIEW_NAME_CONTAINER_BACKGROUND = "detail:container:backgound"
+    val VIEW_NAME_CONTAINER_BACKGROUND = "detail:container:backgound"
 
-    public val VIEW_NAME_TEXT_TITLE = "detail:text:title"
+    val VIEW_NAME_TEXT_TITLE = "detail:text:title"
 
-    public val VIEW_NAME_TEXT_DESCRIPTION = "detail:text:description"
+    val VIEW_NAME_TEXT_DESCRIPTION = "detail:text:description"
 
-    public val VIEW_NAME_APPBARLAYOUT = "detail:nav:appbarlayout"
+    val VIEW_NAME_APPBARLAYOUT = "detail:nav:appbarlayout"
 
     private val adapter = CommentAdapter() { view: View?, learnItem: Contribution -> }
 
@@ -56,7 +58,13 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         viewModelKnowledge.learnItem.observe(this, Observer<LearnItem> {
             name.text = viewModelKnowledge.learnItem.value?.name
 
-            description.text = viewModelKnowledge.learnItem.value?.description
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                description.text = Html.fromHtml(viewModelKnowledge.learnItem.value?.description, Html.FROM_HTML_MODE_LEGACY)
+            }
+            else
+            {
+                description.text = Html.fromHtml(viewModelKnowledge.learnItem.value?.description)
+            }
 
             img.setImageDrawable(viewModelKnowledge.learnItem.value?.getDrawable(img.context))
 
@@ -82,13 +90,13 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 commentBtn.setBackgroundColor(color)
             }
 
-            doneBtn.setOnClickListener({
+            doneBtn.setOnClickListener{
                 viewModelKnowledge.insertContribution(viewModelKnowledge.learnItem.value?.idLearnItem)
-            })
+            }
 
-            commentBtn.setOnClickListener({
+            commentBtn.setOnClickListener{
                 viewModelKnowledge.commentContribution(viewModelKnowledge.learnItem.value?.idLearnItem, commentEd.text.toString())
-            })
+            }
 
             imgFav.setOnClickListener {
                 viewModelKnowledge.updateFav(viewModelKnowledge.learnItem.value)

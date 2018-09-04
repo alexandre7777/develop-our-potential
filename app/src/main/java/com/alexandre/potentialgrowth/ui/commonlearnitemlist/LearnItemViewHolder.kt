@@ -1,7 +1,9 @@
 package com.alexandre.potentialgrowth.ui.commonlearnitemlist
 
+import android.os.Build
 import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +13,7 @@ import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
 
 /**
- * View Holder for displaying item on the secand home tab
+ * View Holder for displaying item on the second home tab
  */
 class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val name: TextView = view.findViewById(R.id.name)
@@ -35,7 +37,14 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private fun showRepoData(learnItem: LearnItem, listener: (View?, LearnItem) -> Unit, listenerFav: (View?, LearnItem) -> Unit) {
         this.learnItem = learnItem
         name.text = learnItem.name
-        description.text = learnItem.description
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            description.text = Html.fromHtml(learnItem.description, Html.FROM_HTML_MODE_LEGACY)
+        }
+        else
+        {
+            description.text = Html.fromHtml(learnItem.description)
+        }
 
         img.setImageDrawable(learnItem.getDrawable(img.context))
 
