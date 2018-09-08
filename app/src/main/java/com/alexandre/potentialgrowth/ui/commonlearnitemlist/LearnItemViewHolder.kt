@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.UtilLearnItem
 
 /**
  * View Holder for displaying item on the second home tab
@@ -46,14 +47,14 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             description.text = Html.fromHtml(learnItem.description)
         }
 
-        img.setImageDrawable(learnItem.getDrawable(img.context))
+        img.setImageDrawable(UtilLearnItem.getDrawable(img.context, learnItem.idType))
 
-        imgFav.setImageDrawable(learnItem.getFavDrawable(img.context))
+        imgFav.setImageDrawable(UtilLearnItem.getFavDrawable(img.context, learnItem.idType, learnItem.isFavorite))
 
-        container.setBackgroundColor(learnItem.getColor(container.context))
+        container.setBackgroundColor(UtilLearnItem.getColor(container.context, learnItem.idType))
 
-        name.setTextColor(learnItem.getTextColor(name.context))
-        description.setTextColor(learnItem.getTextColor(description.context))
+        name.setTextColor(UtilLearnItem.getTextColor(name.context, learnItem.idType))
+        description.setTextColor(UtilLearnItem.getTextColor(description.context, learnItem.idType))
 
         this.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

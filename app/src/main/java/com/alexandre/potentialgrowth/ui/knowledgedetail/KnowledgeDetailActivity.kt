@@ -13,6 +13,7 @@ import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.Contribution
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.UtilLearnItem
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.activity_knowledge_detail.*
 
@@ -59,26 +60,36 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                 description.text = Html.fromHtml(viewModelKnowledge.learnItem.value?.description)
             }
 
-            img.setImageDrawable(viewModelKnowledge.learnItem.value?.getDrawable(img.context))
+            img.setImageDrawable(viewModelKnowledge.learnItem.value?.idType?.let { it1 -> UtilLearnItem.getDrawable(img.context, it1) })
 
-            imgFav.setImageDrawable(viewModelKnowledge.learnItem.value?.getFavDrawable(img.context))
+            imgFav.setImageDrawable(viewModelKnowledge.learnItem.value?.idType?.let {
+                it1 -> viewModelKnowledge.learnItem.value?.isFavorite?.let {
+                it2 -> UtilLearnItem.getFavDrawable(img.context, it1, it2)
+            }
+            })
 
-            viewModelKnowledge.learnItem.value?.getColor(container.context)?.let { color ->
-                container.setBackgroundColor(color)
-                nestedScroll.setBackgroundColor(color)
+            viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
+                UtilLearnItem.getColor(container.context, it1)?.let { color ->
+                    container.setBackgroundColor(color)
+                    nestedScroll.setBackgroundColor(color)
+                }
             }
 
-            viewModelKnowledge.learnItem.value?.getTextColor(container.context)?.let { textColor ->
-                name.setTextColor(textColor)
-                description.setTextColor(textColor)
-                congratulationTxt.setTextColor(textColor)
-                adapter.color = textColor
-                initAdapter()
+            viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
+                UtilLearnItem.getTextColor(container.context, it1)?.let { textColor ->
+                    name.setTextColor(textColor)
+                    description.setTextColor(textColor)
+                    congratulationTxt.setTextColor(textColor)
+                    adapter.color = textColor
+                    initAdapter()
+                }
             }
 
-            viewModelKnowledge.learnItem.value?.getOppositeColor(container.context)?.let { color ->
-                doneBtn.setBackgroundColor(color)
-                fab.backgroundTintList = ColorStateList.valueOf(color)
+            viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
+                UtilLearnItem.getOppositeColor(container.context, it1)?.let { color ->
+                    doneBtn.setBackgroundColor(color)
+                    fab.backgroundTintList = ColorStateList.valueOf(color)
+                }
             }
 
             doneBtn.setOnClickListener{

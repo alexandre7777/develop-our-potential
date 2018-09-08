@@ -10,6 +10,7 @@ import android.widget.*
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.UtilLearnItem
 
 /**
  * Dialog fragment to create one comment
@@ -58,11 +59,11 @@ class AddDialogCommentFragment : DialogFragment() {
             dismiss()
         }
 
-        context?.let { learnItem?.getColor(it) }?.let { backgroundDialog?.setBackgroundColor(it) }
+        context?.let { UtilLearnItem.getColor(it, learnItem.idType) }?.let { backgroundDialog?.setBackgroundColor(it) }
 
-        context?.let { learnItem?.getTextColor(it) }?.let { textView?.setTextColor(it) }
+        context?.let { UtilLearnItem.getTextColor(it, learnItem.idType) }?.let { textView?.setTextColor(it) }
 
-        context?.let { learnItem?.getOppositeColor(it) }?.let { addBtn?.setBackgroundColor(it) }
+        context?.let { UtilLearnItem.getOppositeColor(it, learnItem.idType) }?.let { addBtn?.setBackgroundColor(it) }
 
         builder.setView(dialogView)
         // Create the AlertDialog object and return it
