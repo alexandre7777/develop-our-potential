@@ -146,4 +146,46 @@ object UtilLearnItem {
         else
             return  ContextCompat.getDrawable(context, R.drawable.ic_empty_star_white)
     }
+
+    fun getDoneDrawable(context : Context, idType : Int) : Drawable? {
+        when (idType){
+            1 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_check_white)
+            }
+            2 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_check_white)
+            }
+            3 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_check_black)
+            }
+            4 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_check_black)
+            }
+            5 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_check_black)
+            }
+        }
+        return ContextCompat.getDrawable(context, R.drawable.ic_check_white)
+    }
+
+    fun getCommentDrawable(context : Context, idType : Int) : Drawable? {
+        when (idType){
+            1 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_comment)
+            }
+            2 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_comment)
+            }
+            3 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_comment_black)
+            }
+            4 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_comment_black)
+            }
+            5 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ic_comment_black)
+            }
+        }
+        return ContextCompat.getDrawable(context, R.drawable.ic_comment)
+    }
 }
