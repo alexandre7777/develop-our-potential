@@ -23,6 +23,7 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val imgFav: ImageView = view.findViewById(R.id.imgFav)
     private val container: ConstraintLayout = view.findViewById(R.id.container)
     private val countDone: TextView = view.findViewById(R.id.countDone)
+    private val countComment: TextView = view.findViewById(R.id.countComment)
 
 
     private var learnItemWithContribution: LearnItemWithContribution? = null
@@ -60,6 +61,10 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         description.setTextColor(UtilLearnItem.getTextColor(description.context, learnItemWithContribution.idType))
 
         countDone.text = learnItemWithContribution.countDone.toString()
+        countComment.text = learnItemWithContribution.countComment.toString()
+
+        countDone.setTextColor(UtilLearnItem.getTextColor(countDone.context, learnItemWithContribution.idType))
+        countComment.setTextColor(UtilLearnItem.getTextColor(countComment.context, learnItemWithContribution.idType))
 
         this.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
