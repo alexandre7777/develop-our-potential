@@ -68,6 +68,10 @@ class KnowledgeDetailActivity : AppCompatActivity() {
             }
             })
 
+            countDone.text = viewModelKnowledge.learnItem.value?.countDone.toString()
+
+            countComment.text = viewModelKnowledge.learnItem.value?.countComment.toString()
+
             viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
                 UtilLearnItem.getColor(container.context, it1)?.let { color ->
                     container.setBackgroundColor(color)
@@ -82,6 +86,8 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                     congratulationTxt.setTextColor(textColor)
                     adapter.color = textColor
                     initAdapter()
+                    countDone.setTextColor(textColor)
+                    countComment.setTextColor(textColor)
                 }
             }
 
@@ -91,6 +97,14 @@ class KnowledgeDetailActivity : AppCompatActivity() {
                     fab.backgroundTintList = ColorStateList.valueOf(color)
                 }
             }
+
+            imgCountDone.setImageDrawable(viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
+                UtilLearnItem.getDoneDrawable(container.context, it1)
+            })
+
+            imgCountComment.setImageDrawable(viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
+                UtilLearnItem.getCommentDrawable(container.context, it1)
+            })
 
             doneBtn.setOnClickListener{
                 viewModelKnowledge.insertContribution(viewModelKnowledge.learnItem.value?.idLearnItem)
