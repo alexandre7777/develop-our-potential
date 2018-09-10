@@ -35,6 +35,39 @@
             android:text="0"/>
 
         <ImageView
+            android:id="@+id/imgCountDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_check_white"
+            app:layout_constraintBottom_toBottomOf="@+id/countDone"
+            app:layout_constraintStart_toEndOf="@+id/countDone"
+            app:layout_constraintTop_toTopOf="@+id/countDone" />
+
+        <TextView
+            android:id="@+id/countComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="0"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintTop_toBottomOf="@+id/countDone" />
+
+        <ImageView
+            android:id="@+id/imgCountComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_comment"
+            app:layout_constraintBottom_toBottomOf="@+id/countComment"
+            app:layout_constraintStart_toEndOf="@+id/countComment"
+            app:layout_constraintTop_toTopOf="@+id/countComment" />
+
+        <ImageView
             android:id="@+id/imgFav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
