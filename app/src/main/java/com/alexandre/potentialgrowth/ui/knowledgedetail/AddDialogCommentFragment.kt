@@ -9,7 +9,7 @@ import android.support.constraint.ConstraintLayout
 import android.widget.*
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 import com.alexandre.potentialgrowth.model.UtilLearnItem
 
 /**
@@ -20,9 +20,9 @@ class AddDialogCommentFragment : DialogFragment() {
     private lateinit var viewModelAddDialog: AddDialogCommentFragmentViewModel
 
     private val DESCRIBABLE_KEY = "describable_key"
-    private lateinit var learnItem: LearnItem
+    private lateinit var learnItem: LearnItemWithContribution
 
-    fun newInstance(learnItem: LearnItem): AddDialogCommentFragment {
+    fun newInstance(learnItem: LearnItemWithContribution): AddDialogCommentFragment {
         val fragment = AddDialogCommentFragment()
         val bundle = Bundle()
         bundle.putSerializable(DESCRIBABLE_KEY, learnItem)
@@ -33,7 +33,7 @@ class AddDialogCommentFragment : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
-        learnItem = arguments?.getSerializable(DESCRIBABLE_KEY) as LearnItem
+        learnItem = arguments?.getSerializable(DESCRIBABLE_KEY) as LearnItemWithContribution
 
         viewModelAddDialog = ViewModelProviders.of(this, Injection.provideViewModelFactoryAddDialogComment(activity!!))
                 .get(AddDialogCommentFragmentViewModel::class.java)

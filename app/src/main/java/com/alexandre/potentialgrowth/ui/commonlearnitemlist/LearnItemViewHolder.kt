@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 import com.alexandre.potentialgrowth.model.UtilLearnItem
 
 /**
@@ -22,11 +22,12 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val img: ImageView = view.findViewById(R.id.img)
     private val imgFav: ImageView = view.findViewById(R.id.imgFav)
     private val container: ConstraintLayout = view.findViewById(R.id.container)
+    private val countDone: TextView = view.findViewById(R.id.countDone)
 
 
-    private var learnItem: LearnItem? = null
+    private var learnItemWithContribution: LearnItemWithContribution? = null
 
-    fun bind(learnItem: LearnItem?, listener: (View?, LearnItem) -> Unit, listenerFav: (View?, LearnItem) -> Unit) {
+    fun bind(learnItem: LearnItemWithContribution?, listener: (View?, LearnItemWithContribution) -> Unit, listenerFav: (View?, LearnItemWithContribution) -> Unit) {
         if (learnItem != null) {
             showRepoData(learnItem, listener, listenerFav)
         }
@@ -35,35 +36,39 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     /**
      * Set colors and text for the item
      */
-    private fun showRepoData(learnItem: LearnItem, listener: (View?, LearnItem) -> Unit, listenerFav: (View?, LearnItem) -> Unit) {
-        this.learnItem = learnItem
-        name.text = learnItem.name
+    private fun showRepoData(learnItemWithContribution: LearnItemWithContribution, listener: (View?, LearnItemWithContribution) -> Unit, listenerFav: (View?, LearnItemWithContribution) -> Unit) {
+        this.learnItemWithContribution = learnItemWithContribution
+        name.text = learnItemWithContribution.name
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            description.text = Html.fromHtml(learnItem.description, Html.FROM_HTML_MODE_LEGACY)
+            description.text = Html.fromHtml(learnItemWithContribution.description, Html.FROM_HTML_MODE_LEGACY)
         }
         else
         {
-            description.text = Html.fromHtml(learnItem.description)
+            description.text = Html.fromHtml(learnItemWithContribution.description)
         }
 
-        img.setImageDrawable(UtilLearnItem.getDrawable(img.context, learnItem.idType))
+        img.setImageDrawable(UtilLearnItem.getDrawable(img.context, learnItemWithContribution.idType))
 
-        imgFav.setImageDrawable(UtilLearnItem.getFavDrawable(img.context, learnItem.idType, learnItem.isFavorite))
+        imgFav.setImageDrawable(UtilLearnItem.getFavDrawable(img.context,
+                learnItemWithContribution.idType,
+                learnItemWithContribution.isFavorite))
 
-        container.setBackgroundColor(UtilLearnItem.getColor(container.context, learnItem.idType))
+        container.setBackgroundColor(UtilLearnItem.getColor(container.context, learnItemWithContribution.idType))
 
-        name.setTextColor(UtilLearnItem.getTextColor(name.context, learnItem.idType))
-        description.setTextColor(UtilLearnItem.getTextColor(description.context, learnItem.idType))
+        name.setTextColor(UtilLearnItem.getTextColor(name.context, learnItemWithContribution.idType))
+        description.setTextColor(UtilLearnItem.getTextColor(description.context, learnItemWithContribution.idType))
+
+        countDone.text = learnItemWithContribution.countDone.toString()
 
         this.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                listener(v, learnItem)
+                listener(v, learnItemWithContribution)
             }
         })
 
         imgFav.setOnClickListener{
-            listenerFav(it, learnItem)
+            listenerFav(it, learnItemWithContribution)
         }
     }
 

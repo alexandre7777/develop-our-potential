@@ -12,7 +12,7 @@ import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.Contribution
-import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 import com.alexandre.potentialgrowth.model.UtilLearnItem
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import kotlinx.android.synthetic.main.activity_knowledge_detail.*
@@ -49,7 +49,7 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         viewModelKnowledge = ViewModelProviders.of(this, Injection.provideViewModelFactoryDetail(this, id))
                 .get(KnowledgeDetailActivityViewModel::class.java)
 
-        viewModelKnowledge.learnItem.observe(this, Observer<LearnItem> {
+        viewModelKnowledge.learnItem.observe(this, Observer<LearnItemWithContribution> {
             name.text = viewModelKnowledge.learnItem.value?.name
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -126,9 +126,9 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         })
     }
 
-    private fun initFAB(learnItem: LearnItem?) {
+    private fun initFAB(learnItemWithContribution: LearnItemWithContribution?) {
         fab.setOnClickListener{
-            val addDialogFragment = learnItem?.let { it1 -> AddDialogCommentFragment().newInstance(it1) }
+            val addDialogFragment = learnItemWithContribution?.let { it1 -> AddDialogCommentFragment().newInstance(it1) }
             addDialogFragment?.show(supportFragmentManager, "Add")
         }
     }

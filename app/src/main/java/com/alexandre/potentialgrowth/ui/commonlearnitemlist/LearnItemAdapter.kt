@@ -5,12 +5,12 @@ import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 
 /**
  * Adapter for the Knowledge tab on the home page
  */
-class LearnItemAdapter(private val listener: (View?, LearnItem) -> Unit, private val listenerFav: (View?, LearnItem) -> Unit) : ListAdapter<LearnItem, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
+class LearnItemAdapter(private val listener: (View?, LearnItemWithContribution) -> Unit, private val listenerFav: (View?, LearnItemWithContribution) -> Unit) : ListAdapter<LearnItemWithContribution, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return LearnItemViewHolder.create(parent)
@@ -24,11 +24,11 @@ class LearnItemAdapter(private val listener: (View?, LearnItem) -> Unit, private
     }
 
     companion object {
-        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<LearnItem>() {
-            override fun areItemsTheSame(oldItem: LearnItem, newItem: LearnItem): Boolean =
+        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<LearnItemWithContribution>() {
+            override fun areItemsTheSame(oldItem: LearnItemWithContribution, newItem: LearnItemWithContribution): Boolean =
                     oldItem.idLearnItem == newItem.idLearnItem
 
-            override fun areContentsTheSame(oldItem: LearnItem, newItem: LearnItem): Boolean =
+            override fun areContentsTheSame(oldItem: LearnItemWithContribution, newItem: LearnItemWithContribution): Boolean =
                     oldItem == newItem
         }
     }
