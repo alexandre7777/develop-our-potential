@@ -11,12 +11,12 @@ import android.support.v4.util.Pair
 import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.model.LearnItem
 import com.alexandre.potentialgrowth.ui.MainActivity
 import com.alexandre.potentialgrowth.ui.commonlearnitemlist.LearnItemAdapter
 import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.activity_favorites.*
 import android.support.design.widget.Snackbar
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 
 /**
  * Activity to display a list of favorites
@@ -27,7 +27,7 @@ class FavoritesActivity : MainActivity() {
 
     public val INTENT_DETAIL_EXTRA = "intentdetailextrakey"
 
-    private var adapter = LearnItemAdapter({ view: View?, learnItem: LearnItem ->
+    private var adapter = LearnItemAdapter({ view: View?, learnItem: LearnItemWithContribution ->
         val intent = Intent(this, KnowledgeDetailActivity::class.java).apply {
             putExtra(INTENT_DETAIL_EXTRA, learnItem.idLearnItem)
         }
@@ -50,7 +50,7 @@ class FavoritesActivity : MainActivity() {
 
         ActivityCompat.startActivity(this, intent, activityOptions.toBundle())
 
-    }, { view: View?, learnItem: LearnItem ->
+    }, { view: View?, learnItem: LearnItemWithContribution ->
         viewModelFavorites.updateFav(learnItem)
 
         val snackbar = Snackbar
@@ -85,7 +85,7 @@ class FavoritesActivity : MainActivity() {
         list.adapter = adapter
 
 
-        viewModelFavorites.mFavLearnItem.observe(this, Observer<List<LearnItem>> {
+        viewModelFavorites.mFavLearnItem.observe(this, Observer<List<LearnItemWithContribution>> {
             adapter.submitList(it)
         })
     }

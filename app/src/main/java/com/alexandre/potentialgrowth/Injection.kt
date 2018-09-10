@@ -12,6 +12,7 @@ import com.alexandre.potentialgrowth.ui.home.dashboard.ViewModelFactoryDashboard
 import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryKnowledgeDetail
 import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
 import com.alexandre.potentialgrowth.ui.home.reward.ViewModelFactoryReward
+import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryAddDialogComment
 import com.alexandre.potentialgrowth.ui.yourdairy.ViewModelFactoryAddDialog
 import com.alexandre.potentialgrowth.ui.yourdairy.ViewModelFactoryYourDairy
 import java.util.concurrent.Executors
@@ -107,5 +108,13 @@ object Injection{
      */
     fun provideViewModelFactoryFavorites(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryFavoritesActivity(provideLearnItemRepo(context))
+    }
+
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
+    fun provideViewModelFactoryAddDialogComment(context: Context): ViewModelProvider.Factory {
+        return ViewModelFactoryAddDialogComment(provideContributionRepo(context))
     }
 }

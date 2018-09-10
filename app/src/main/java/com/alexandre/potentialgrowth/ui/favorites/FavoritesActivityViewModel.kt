@@ -2,7 +2,7 @@ package com.alexandre.potentialgrowth.ui.favorites
 
 import android.arch.lifecycle.ViewModel
 import com.alexandre.potentialgrowth.data.LearnItemRepo
-import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 
 class FavoritesActivityViewModel(private val learnItemRepo: LearnItemRepo) : ViewModel() {
 
@@ -11,12 +11,12 @@ class FavoritesActivityViewModel(private val learnItemRepo: LearnItemRepo) : Vie
     /**
      * hold the last deleted learn item in order to recreate if needed
      */
-    var lastDeletedLearnItem : LearnItem? = null
+    var lastDeletedLearnItem : LearnItemWithContribution? = null
 
     /**
      * store a new "I have done it"
      */
-    public fun updateFav(learnItem: LearnItem?) {
+    public fun updateFav(learnItem: LearnItemWithContribution?) {
         if (learnItem != null) {
             learnItemRepo.updateFav(learnItem.idLearnItem, !learnItem.isFavorite)
             lastDeletedLearnItem = learnItem
