@@ -1,5 +1,7 @@
-package com.alexandre.potentialgrowth.ui
+package com.alexandre.potentialgrowth.ui.mainactivity
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -7,8 +9,12 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.widget.TextView
+import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
+import com.alexandre.potentialgrowth.model.Quote
 import com.alexandre.potentialgrowth.ui.favorites.FavoritesActivity
+import com.alexandre.potentialgrowth.ui.favorites.FavoritesActivityViewModel
 import com.alexandre.potentialgrowth.ui.home.HomeActivity
 import com.alexandre.potentialgrowth.ui.instruction.InstructionActivity
 import com.alexandre.potentialgrowth.ui.licence.LicenceActivity
@@ -16,6 +22,8 @@ import com.alexandre.potentialgrowth.ui.yourdairy.YourDairyActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 open class MainActivity : AppCompatActivity() {
+
+    private lateinit var mainActivityViewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +37,20 @@ open class MainActivity : AppCompatActivity() {
     private fun setupDrawer() {
 
         val navigationView: NavigationView = findViewById(R.id.nav_view)
+
+        val quoteBody: TextView = navigationView.getHeaderView(0).findViewById(R.id.quoteBody)
+
+        val quoteAuthor: TextView = navigationView.getHeaderView(0).findViewById(R.id.quoteAuthor)
+
+        mainActivityViewModel = ViewModelProviders.of(this, Injection.provideViewModelFactoryMainActivity(this, this.application))
+                .get(MainActivityViewModel::class.java)
+
+        mainActivityViewModel.quote.observe(this, Observer<Quote> {
+            quoteBody.text = getString(R.string.quote_placeholder, it?.body)
+            quoteAuthor.text = getString(R.string.author_placeholder, it?.author)
+        })
+
+
         navigationView.setNavigationItemSelectedListener { menuItem ->
             // set item as selected to persist highlight
 

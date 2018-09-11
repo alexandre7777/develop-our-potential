@@ -34,6 +34,8 @@
     <string name="error_dairy_empty_text">Please write some text.</string>
     <string name="undo">UNDO</string>
     <string name="favorite_deleted">Favorite deleted</string>
+    <string name="quote_placeholder">\" %1$s \"</string>
+    <string name="author_placeholder">- %1$s</string>
 
     <string name="preference_file">com.alexandre.potentialgrowth.preference_file</string>
     <string name="preference_last_download">com.alexandre.potentialgrowth.preference_last_download</string>

@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.Dairy
-import com.alexandre.potentialgrowth.ui.MainActivity
+import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
 import kotlinx.android.synthetic.main.activity_your_dairy.*
 import android.support.v7.widget.RecyclerView
 

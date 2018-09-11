@@ -2,7 +2,7 @@ package com.alexandre.potentialgrowth.ui.instruction
 
 import android.os.Bundle
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.ui.MainActivity
+import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class InstructionActivity : MainActivity() {

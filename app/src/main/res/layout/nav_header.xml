@@ -9,6 +9,24 @@
     android:gravity="bottom">
 
     <TextView
+        android:id="@+id/quoteBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:maxLines="4"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/quoteAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:gravity="end"
+        android:textStyle="italic"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_name"

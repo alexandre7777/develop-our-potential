@@ -11,7 +11,7 @@ import android.support.v4.util.Pair
 import android.view.View
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.ui.MainActivity
+import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
 import com.alexandre.potentialgrowth.ui.commonlearnitemlist.LearnItemAdapter
 import com.alexandre.potentialgrowth.ui.knowledgedetail.KnowledgeDetailActivity
 import kotlinx.android.synthetic.main.activity_favorites.*

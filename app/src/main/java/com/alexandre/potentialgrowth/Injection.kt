@@ -15,6 +15,7 @@ import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryKnowledg
 import com.alexandre.potentialgrowth.ui.home.knowledge.ViewModelFactoryKnowledge
 import com.alexandre.potentialgrowth.ui.home.reward.ViewModelFactoryReward
 import com.alexandre.potentialgrowth.ui.knowledgedetail.ViewModelFactoryAddDialogComment
+import com.alexandre.potentialgrowth.ui.mainactivity.ViewModelFactoryMainActivity
 import com.alexandre.potentialgrowth.ui.yourdairy.ViewModelFactoryAddDialog
 import com.alexandre.potentialgrowth.ui.yourdairy.ViewModelFactoryYourDairy
 import com.alexandre.potentialgrowth.webservice.QuoteService
@@ -128,5 +129,13 @@ object Injection{
      */
     fun provideViewModelFactoryAddDialogComment(context: Context): ViewModelProvider.Factory {
         return ViewModelFactoryAddDialogComment(provideContributionRepo(context))
+    }
+
+    /**
+     * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
+     * [ViewModel] objects.
+     */
+    fun provideViewModelFactoryMainActivity(context: Context, application: Application): ViewModelProvider.Factory {
+        return ViewModelFactoryMainActivity(provideQuoteRepo(context), application)
     }
 }
