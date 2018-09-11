@@ -4,13 +4,10 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import com.alexandre.potentialgrowth.model.LearnItem
 import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.TypeConverters
 import com.alexandre.potentialgrowth.ioThread
-import com.alexandre.potentialgrowth.model.Contribution
-import com.alexandre.potentialgrowth.model.Converters
-import com.alexandre.potentialgrowth.model.Dairy
+import com.alexandre.potentialgrowth.model.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.InputStreamReader
@@ -19,7 +16,7 @@ import java.io.InputStreamReader
  * Database schema that holds the list of repos.
  */
 @Database(
-        entities = [LearnItem::class, Contribution::class, Dairy::class],
+        entities = [LearnItem::class, Contribution::class, Dairy::class, Quote::class],
         version = 1,
         exportSchema = false
 )
@@ -29,6 +26,7 @@ abstract class LearnItemDatabase : RoomDatabase() {
     abstract fun learnItemDao(): LearnItemDao
     abstract fun contributionDao() : ContributionDao
     abstract fun dairyDao() : DairyDao
+    abstract fun quoteDao() : QuoteDao
 
     companion object {
 
