@@ -10,12 +10,12 @@ import com.alexandre.potentialgrowth.data.QuoteRepo
 /**
  * Factory for ViewModels
  */
-class ViewModelFactoryDashboard(private val repository: ContributionRepo, private val quoteRepo: QuoteRepo, private val application: Application) : ViewModelProvider.Factory {
+class ViewModelFactoryDashboard(private val repository: ContributionRepo) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DashBoardFragmentViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return DashBoardFragmentViewModel(repository, quoteRepo, application) as T
+            return DashBoardFragmentViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class") as Throwable
     }

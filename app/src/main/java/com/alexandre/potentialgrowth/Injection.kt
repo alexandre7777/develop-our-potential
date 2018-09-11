@@ -79,8 +79,8 @@ object Injection{
      * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
      * [ViewModel] objects.
      */
-    fun provideViewModelFactoryDashboard(context: Context, application: Application): ViewModelProvider.Factory {
-        return ViewModelFactoryDashboard(provideContributionRepo(context), provideQuoteRepo(context), application)
+    fun provideViewModelFactoryDashboard(context: Context): ViewModelProvider.Factory {
+        return ViewModelFactoryDashboard(provideContributionRepo(context))
     }
 
     /**
