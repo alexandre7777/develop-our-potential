@@ -14,7 +14,6 @@ import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.Quote
 import com.alexandre.potentialgrowth.ui.favorites.FavoritesActivity
-import com.alexandre.potentialgrowth.ui.favorites.FavoritesActivityViewModel
 import com.alexandre.potentialgrowth.ui.home.HomeActivity
 import com.alexandre.potentialgrowth.ui.instruction.InstructionActivity
 import com.alexandre.potentialgrowth.ui.licence.LicenceActivity

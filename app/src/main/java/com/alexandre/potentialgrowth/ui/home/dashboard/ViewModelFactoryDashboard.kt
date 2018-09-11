@@ -1,11 +1,8 @@
 package com.alexandre.potentialgrowth.ui.home.dashboard
 
-import android.app.Application
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import com.alexandre.potentialgrowth.data.ContributionRepo
-import com.alexandre.potentialgrowth.data.LearnItemRepo
-import com.alexandre.potentialgrowth.data.QuoteRepo
 
 /**
  * Factory for ViewModels
