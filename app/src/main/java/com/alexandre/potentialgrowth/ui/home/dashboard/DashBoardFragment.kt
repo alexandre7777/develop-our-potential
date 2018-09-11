@@ -35,7 +35,7 @@ class DashBoardFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        viewModelDashboard = ViewModelProviders.of(this, Injection.provideViewModelFactoryDashboard(activity!!))
+        viewModelDashboard = ViewModelProviders.of(this, Injection.provideViewModelFactoryDashboard(activity!!, activity!!.application))
                 .get(DashBoardFragmentViewModel::class.java)
 
         viewModelDashboard.countContributionCommunication.observe(this, Observer<Int> {

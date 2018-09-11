@@ -16,4 +16,7 @@ interface QuoteDao {
 
     @Query("SELECT * FROM quote WHERE time ORDER BY time DESC LIMIT 1")
     fun getTheLastQuote(): LiveData<Quote>
+
+    @Query("DELETE FROM quote WHERE time < :time")
+    fun deleteQuoteByTime(time: Long)
 }

@@ -1,5 +1,6 @@
 package com.alexandre.potentialgrowth
 
+import android.app.Application
 import android.arch.lifecycle.ViewModelProvider
 import android.content.Context
 import com.alexandre.potentialgrowth.data.ContributionRepo
@@ -77,8 +78,8 @@ object Injection{
      * Provides the [ViewModelProvider.Factory] that is then used to get a reference to
      * [ViewModel] objects.
      */
-    fun provideViewModelFactoryDashboard(context: Context): ViewModelProvider.Factory {
-        return ViewModelFactoryDashboard(provideContributionRepo(context), provideQuoteRepo(context))
+    fun provideViewModelFactoryDashboard(context: Context, application: Application): ViewModelProvider.Factory {
+        return ViewModelFactoryDashboard(provideContributionRepo(context), provideQuoteRepo(context), application)
     }
 
     /**
