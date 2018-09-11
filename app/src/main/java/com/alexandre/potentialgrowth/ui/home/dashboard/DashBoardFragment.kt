@@ -22,15 +22,11 @@ import kotlinx.android.synthetic.main.fragment_dashboard.*
  */
 class DashBoardFragment : Fragment(){
 
-    public val INTENT_DETAIL_EXTRA = "intentdetailextrakey"
+    val INTENT_DETAIL_EXTRA = "intentdetailextrakey"
 
-    public val INTENT_DETAIL_EXTRA_TEXT = "intentdetailextratextkey"
+    val INTENT_DETAIL_EXTRA_TEXT = "intentdetailextratextkey"
 
     private lateinit var viewModelDashboard: DashBoardFragmentViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
