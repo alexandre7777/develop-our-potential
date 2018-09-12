@@ -34,9 +34,19 @@
     <string name="error_dairy_empty_text">Please write some text.</string>
     <string name="undo">UNDO</string>
     <string name="favorite_deleted">Favorite deleted</string>
+  
     <string name="quote_placeholder">\" %1$s \"</string>
     <string name="author_placeholder">- %1$s</string>
 
     <string name="preference_file">com.alexandre.potentialgrowth.preference_file</string>
     <string name="preference_last_download">com.alexandre.potentialgrowth.preference_last_download</string>
+
+    <string name="tuto1">Explore new topics to learn.</string>
+    <string name="tuto2">For each topic you can say that you have done it today and had a comment.</string>
+    <string name="tuto3">You can add a topic to your favorite by clicking the star.</string>
+    <string name="tuto4">For each sections, keep the circle complete by doing it or comment it.</string>
+    <string name="tuto5">You can add your Goals, Stories and Ideas in the dairy section.</string>
+    <string name="indicator">indicator</string>
+
+    <string name="skip">Skip</string>
 </resources>
