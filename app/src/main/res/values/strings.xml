@@ -41,4 +41,6 @@
     <string name="tuto4">For each sections, keep the circle complete by doing it or comment it.</string>
     <string name="tuto5">You can add your Goals, Stories and Ideas in the dairy section.</string>
     <string name="indicator">indicator</string>
+
+    <string name="skip">Skip</string>
 </resources>
