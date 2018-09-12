@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 import android.support.v4.view.ViewPager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.app.FragmentManager
-import com.alexandre.potentialgrowth.ui.MainActivity
+import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
 import com.alexandre.potentialgrowth.ui.home.dashboard.DashBoardFragment
 import com.alexandre.potentialgrowth.ui.home.knowledge.KnowledgeFragment
 import com.alexandre.potentialgrowth.ui.home.reward.RewardFragment

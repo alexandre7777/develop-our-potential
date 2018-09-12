@@ -4,7 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.ui.MainActivity
+import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
 import kotlinx.android.synthetic.main.activity_licence.*
 
 class LicenceActivity : MainActivity() {

@@ -3,7 +3,6 @@ package com.alexandre.potentialgrowth.ui.home.dashboard
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import com.alexandre.potentialgrowth.data.ContributionRepo
-import com.alexandre.potentialgrowth.data.LearnItemRepo
 
 /**
  * Factory for ViewModels

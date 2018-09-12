@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import com.alexandre.potentialgrowth.Injection
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.UtilLearnItem
 import com.alexandre.potentialgrowth.ui.home.dashboard.DashBoardFragment
 import kotlinx.android.synthetic.main.activity_dashbroad_detail.*
 
@@ -62,17 +63,17 @@ class DashboardDetailActivity : AppCompatActivity() {
     private fun setupView(type : Int, title : String?) {
         val learnItem = LearnItem(0, type, 0, "", "", "", false)
 
-        backgroundCL.setBackgroundColor(learnItem.getColor(this))
+        backgroundCL.setBackground(UtilLearnItem.getColor(this, learnItem.idType))
 
-        progressBar.progressDrawable = learnItem.getProgressDrawable(this)
+        progressBar.progressDrawable = UtilLearnItem.getProgressDrawable(this, learnItem.idType)
 
-        titleTxt.setTextColor(learnItem.getTextColor(this))
+        titleTxt.setTextColor(UtilLearnItem.getTextColor(this, learnItem.idType))
         titleTxt.text = title
 
-        explanationTxt.setTextColor(learnItem.getTextColor(this))
+        explanationTxt.setTextColor(UtilLearnItem.getTextColor(this, learnItem.idType))
 
         explanationTxt.text = getString(R.string.explanation, title)
 
-        imageView.setImageDrawable(learnItem.getDrawable(this))
+        imageView.setImageDrawable(UtilLearnItem.getDrawable(this, learnItem.idType))
     }
 }

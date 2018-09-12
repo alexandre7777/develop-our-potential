@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import com.alexandre.potentialgrowth.R
-import com.alexandre.potentialgrowth.ui.MainActivity
 import com.alexandre.potentialgrowth.ui.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_instruction.*
+import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
+
 
 class InstructionActivity : MainActivity() {
 

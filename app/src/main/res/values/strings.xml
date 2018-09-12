@@ -22,7 +22,7 @@
     <string name="licence">Licence</string>
     <string name="your_dairy">Your dairy</string>
     <string name="favorites">Favorites</string>
-    <string name="home">home</string>
+    <string name="home">Home</string>
     <string name="write_your_text">Write your text</string>
     <string name="goals">Goals</string>
     <string name="stories">Stories</string>
@@ -34,6 +34,12 @@
     <string name="error_dairy_empty_text">Please write some text.</string>
     <string name="undo">UNDO</string>
     <string name="favorite_deleted">Favorite deleted</string>
+  
+    <string name="quote_placeholder">\" %1$s \"</string>
+    <string name="author_placeholder">- %1$s</string>
+
+    <string name="preference_file">com.alexandre.potentialgrowth.preference_file</string>
+    <string name="preference_last_download">com.alexandre.potentialgrowth.preference_last_download</string>
 
     <string name="tuto1">Explore new topics to learn.</string>
     <string name="tuto2">For each topic you can say that you have done it today and had a comment.</string>

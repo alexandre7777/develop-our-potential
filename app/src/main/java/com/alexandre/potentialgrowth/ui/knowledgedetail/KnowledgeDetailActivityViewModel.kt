@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModel
 import com.alexandre.potentialgrowth.data.ContributionRepo
 import com.alexandre.potentialgrowth.data.LearnItemRepo
 import com.alexandre.potentialgrowth.model.Contribution
-import com.alexandre.potentialgrowth.model.LearnItem
+import com.alexandre.potentialgrowth.model.LearnItemWithContribution
 import java.util.*
 
 /**
@@ -13,7 +13,7 @@ import java.util.*
  */
 class KnowledgeDetailActivityViewModel(private val learnItemRepo: LearnItemRepo, private val contributionRepo: ContributionRepo, idLearnItem: Long) : ViewModel() {
 
-    public var learnItem : LiveData<LearnItem> = learnItemRepo.getLearnItemById(idLearnItem)
+    public var learnItem : LiveData<LearnItemWithContribution> = learnItemRepo.getLearnItemById(idLearnItem)
 
     public var doneItNum : LiveData<Int> = contributionRepo.countHaveDoneforDate(idLearnItem, Date())
 
@@ -22,7 +22,7 @@ class KnowledgeDetailActivityViewModel(private val learnItemRepo: LearnItemRepo,
     /**
      * store a new "I have done it"
      */
-    public fun updateFav(learnItem: LearnItem?) {
+    public fun updateFav(learnItem: LearnItemWithContribution?) {
         if (learnItem != null)
             learnItemRepo.updateFav(learnItem.idLearnItem, !learnItem.isFavorite)
     }
