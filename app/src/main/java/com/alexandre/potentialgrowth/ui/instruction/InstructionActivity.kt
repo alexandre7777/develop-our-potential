@@ -2,12 +2,12 @@ package com.alexandre.potentialgrowth.ui.instruction
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import com.alexandre.potentialgrowth.R
 import com.alexandre.potentialgrowth.ui.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_instruction.*
 import com.alexandre.potentialgrowth.ui.mainactivity.MainActivity
-
 
 class InstructionActivity : MainActivity() {
 
@@ -43,6 +43,8 @@ class InstructionActivity : MainActivity() {
                         indicator4.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         indicator5.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         buttonSkip.text = getString(R.string.skip)
+                        buttonSkip.background = getDrawable(R.drawable.ripple_white)
+                        buttonSkip.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                     }
                     1 -> {
                         indicator1.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
@@ -51,6 +53,8 @@ class InstructionActivity : MainActivity() {
                         indicator4.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         indicator5.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         buttonSkip.text = getString(R.string.skip)
+                        buttonSkip.background = getDrawable(R.drawable.ripple_white)
+                        buttonSkip.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                     }
                     2 -> {
                         indicator1.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
@@ -59,6 +63,8 @@ class InstructionActivity : MainActivity() {
                         indicator4.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         indicator5.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         buttonSkip.text = getString(R.string.skip)
+                        buttonSkip.background = getDrawable(R.drawable.ripple_white)
+                        buttonSkip.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                     }
                     3 -> {
                         indicator1.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
@@ -67,6 +73,8 @@ class InstructionActivity : MainActivity() {
                         indicator4.setImageDrawable(getDrawable(R.drawable.ic_black_round))
                         indicator5.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         buttonSkip.text = getString(R.string.skip)
+                        buttonSkip.background = getDrawable(R.drawable.ripple_white)
+                        buttonSkip.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                     }
                     4 -> {
                         indicator1.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
@@ -75,6 +83,8 @@ class InstructionActivity : MainActivity() {
                         indicator4.setImageDrawable(getDrawable(R.drawable.ic_grey_round))
                         indicator5.setImageDrawable(getDrawable(R.drawable.ic_black_round))
                         buttonSkip.text = getString(R.string.done)
+                        buttonSkip.background = getDrawable(R.drawable.ripple_opposite_white)
+                        buttonSkip.setTextColor(ContextCompat.getColor(applicationContext, R.color.white))
                     }
                 }
             }
