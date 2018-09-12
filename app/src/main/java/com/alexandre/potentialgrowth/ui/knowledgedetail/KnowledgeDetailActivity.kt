@@ -74,8 +74,8 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
             viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
                 UtilLearnItem.getColor(container.context, it1)?.let { color ->
-                    container.setBackgroundColor(color)
-                    nestedScroll.setBackgroundColor(color)
+                    container.setBackground(color)
+                    nestedScroll.setBackground(color)
                 }
             }
 
@@ -92,8 +92,13 @@ class KnowledgeDetailActivity : AppCompatActivity() {
             }
 
             viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
+                UtilLearnItem.getOppositeDrawable(container.context, it1)?.let { color ->
+                    doneBtn.setBackground(color)
+                }
+            }
+
+            viewModelKnowledge.learnItem.value?.idType?.let { it1 ->
                 UtilLearnItem.getOppositeColor(container.context, it1)?.let { color ->
-                    doneBtn.setBackgroundColor(color)
                     fab.backgroundTintList = ColorStateList.valueOf(color)
                 }
             }

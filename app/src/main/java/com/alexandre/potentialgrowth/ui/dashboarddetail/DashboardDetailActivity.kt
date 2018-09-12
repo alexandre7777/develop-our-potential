@@ -63,7 +63,7 @@ class DashboardDetailActivity : AppCompatActivity() {
     private fun setupView(type : Int, title : String?) {
         val learnItem = LearnItem(0, type, 0, "", "", "", false)
 
-        backgroundCL.setBackgroundColor(UtilLearnItem.getColor(this, learnItem.idType))
+        backgroundCL.setBackground(UtilLearnItem.getColor(this, learnItem.idType))
 
         progressBar.progressDrawable = UtilLearnItem.getProgressDrawable(this, learnItem.idType)
 

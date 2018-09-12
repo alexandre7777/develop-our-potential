@@ -57,7 +57,7 @@ class LearnItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 learnItemWithContribution.idType,
                 learnItemWithContribution.isFavorite))
 
-        container.setBackgroundColor(UtilLearnItem.getColor(container.context, learnItemWithContribution.idType))
+        container.setBackground(UtilLearnItem.getColor(container.context, learnItemWithContribution.idType))
 
         name.setTextColor(UtilLearnItem.getTextColor(name.context, learnItemWithContribution.idType))
         description.setTextColor(UtilLearnItem.getTextColor(description.context, learnItemWithContribution.idType))
