@@ -59,11 +59,11 @@ class AddDialogCommentFragment : DialogFragment() {
             dismiss()
         }
 
-        context?.let { UtilLearnItem.getColor(it, learnItem.idType) }?.let { backgroundDialog?.setBackgroundColor(it) }
+        context?.let { UtilLearnItem.getColor(it, learnItem.idType) }?.let { backgroundDialog?.setBackground(it) }
 
         context?.let { UtilLearnItem.getTextColor(it, learnItem.idType) }?.let { textView?.setTextColor(it) }
 
-        context?.let { UtilLearnItem.getOppositeColor(it, learnItem.idType) }?.let { addBtn?.setBackgroundColor(it) }
+        context?.let { UtilLearnItem.getOppositeDrawable(it, learnItem.idType) }?.let { addBtn?.setBackground(it) }
 
         builder.setView(dialogView)
         // Create the AlertDialog object and return it

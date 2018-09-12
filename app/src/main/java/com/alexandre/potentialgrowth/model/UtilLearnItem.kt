@@ -28,25 +28,25 @@ object UtilLearnItem {
         return ContextCompat.getDrawable(context, R.drawable.people)
     }
 
-    fun getColor(context : Context, idType : Int) : Int {
+    fun getColor(context : Context, idType : Int) : Drawable? {
         when (idType){
             1 -> {
-                return ContextCompat.getColor(context, R.color.communication)
+                return ContextCompat.getDrawable(context, R.drawable.ripple_communication)
             }
             2 -> {
-                return ContextCompat.getColor(context, R.color.life_style)
+                return ContextCompat.getDrawable(context, R.drawable.ripple_life_style)
             }
             3 -> {
-                return ContextCompat.getColor(context, R.color.self_confidence)
+                return ContextCompat.getDrawable(context, R.drawable.ripple_self_confidence)
             }
             4 -> {
-                return ContextCompat.getColor(context, R.color.health)
+                return ContextCompat.getDrawable(context, R.drawable.ripple_health)
             }
             5 -> {
-                return ContextCompat.getColor(context, R.color.white)
+                return ContextCompat.getDrawable(context, R.drawable.ripple_white)
             }
         }
-        return ContextCompat.getColor(context, R.color.white)
+        return ContextCompat.getDrawable(context, R.drawable.ripple_white)
     }
 
     fun getTextColor(context : Context, idType : Int) : Int {
@@ -70,7 +70,28 @@ object UtilLearnItem {
         return ContextCompat.getColor(context, R.color.black)
     }
 
-    fun getOppositeColor(context : Context, idType : Int) : Int {
+    fun getOppositeDrawable(context : Context, idType : Int) : Drawable? {
+        when (idType){
+            1 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ripple_opposite_communication)
+            }
+            2 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ripple_opposite_life_style)
+            }
+            3 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ripple_opposite_self_confidence)
+            }
+            4 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ripple_opposite_health)
+            }
+            5 -> {
+                return ContextCompat.getDrawable(context, R.drawable.ripple_opposite_white)
+            }
+        }
+        return ContextCompat.getDrawable(context, R.drawable.ripple_opposite_white)
+    }
+
+    fun getOppositeColor(context : Context, idType : Int) : Int? {
         when (idType){
             1 -> {
                 return ContextCompat.getColor(context, R.color.opposite_communication)
@@ -90,6 +111,8 @@ object UtilLearnItem {
         }
         return ContextCompat.getColor(context, R.color.black)
     }
+
+
 
     fun getProgressDrawable(context : Context, idType : Int) : Drawable? {
         when (idType){
