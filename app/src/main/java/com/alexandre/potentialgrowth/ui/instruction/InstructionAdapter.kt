@@ -13,7 +13,7 @@ class InstructionAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     private val NUM_PAGES = 5
 
     override fun getItem(position: Int): Fragment {
-        return InstructionFragment()
+        return InstructionFragment().newInstance(position)
     }
 
     override fun getCount(): Int {
