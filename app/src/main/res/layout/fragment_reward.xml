@@ -1,119 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/doneTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/done"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:textSize="@dimen/text_big"/>
+        <TextView
+            android:id="@+id/doneTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="@string/done"
+            android:textSize="@dimen/text_big"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/doneBronze"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/done"
-        android:src="@drawable/done_disable"
-        app:layout_constraintEnd_toStartOf="@+id/commentBronze"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doneTxt" />
+        <ImageView
+            android:id="@+id/doneBronze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/done"
+            android:src="@drawable/done_disable"
+            app:layout_constraintEnd_toStartOf="@+id/commentBronze"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/doneTxt" />
 
-    <ImageView
-        android:id="@+id/doneSilver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/done"
-        android:src="@drawable/done_disable"
-        app:layout_constraintEnd_toStartOf="@+id/commentSilver"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doneBronze" />
-
-
-    <ImageView
-        android:id="@+id/doneGold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/done"
-        android:src="@drawable/done_disable"
-        app:layout_constraintEnd_toStartOf="@+id/commentGold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doneSilver" />
+        <ImageView
+            android:id="@+id/doneSilver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/done"
+            android:src="@drawable/done_disable"
+            app:layout_constraintEnd_toStartOf="@+id/commentSilver"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/doneBronze" />
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/comment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/doneTxt"
-        app:layout_constraintTop_toTopOf="@+id/doneTxt"
-        android:gravity="center"
-        android:textSize="@dimen/text_big"/>
-
-    <ImageView
-        android:id="@+id/commentBronze"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/comment"
-        android:src="@drawable/comment_disable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/doneBronze"
-        app:layout_constraintTop_toTopOf="@+id/doneBronze" />
+        <ImageView
+            android:id="@+id/doneGold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/done"
+            android:src="@drawable/done_disable"
+            app:layout_constraintEnd_toStartOf="@+id/commentGold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/doneSilver" />
 
 
-    <ImageView
-        android:id="@+id/commentSilver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/comment"
-        android:src="@drawable/comment_disable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/doneSilver"
-        app:layout_constraintTop_toTopOf="@+id/doneSilver" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/comment"
+            android:textSize="@dimen/text_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/doneTxt"
+            app:layout_constraintTop_toTopOf="@+id/doneTxt" />
 
+        <ImageView
+            android:id="@+id/commentBronze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/comment"
+            android:src="@drawable/comment_disable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/doneBronze"
+            app:layout_constraintTop_toTopOf="@+id/doneBronze" />
 
-    <ImageView
-        android:id="@+id/commentGold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/comment"
-        android:src="@drawable/comment_disable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/doneGold"
-        app:layout_constraintTop_toTopOf="@+id/doneGold" />
+        <ImageView
+            android:id="@+id/commentSilver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/comment"
+            android:src="@drawable/comment_disable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/doneSilver"
+            app:layout_constraintTop_toTopOf="@+id/doneSilver" />
 
+        <ImageView
+            android:id="@+id/commentGold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/comment"
+            android:src="@drawable/comment_disable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/doneGold"
+            app:layout_constraintTop_toTopOf="@+id/doneGold" />
 
-
-
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
