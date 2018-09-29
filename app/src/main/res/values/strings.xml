@@ -40,6 +40,7 @@
 
     <string name="preference_file">com.alexandre.potentialgrowth.preference_file</string>
     <string name="preference_last_download">com.alexandre.potentialgrowth.preference_last_download</string>
+    <string name="preference_has_learned_instruction">com.alexandre.potentialgrowth.preference_has_learned_instruction</string>
 
     <string name="tuto1">Explore new topics to learn.</string>
     <string name="tuto2">For each topic you can say that you have done it today and had a comment.</string>
