@@ -6,10 +6,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
- * Object to store item to learn
- * type 1 = one choice
- * type 2 = multi choices
- * type 3 = open answer
+ * Object to store answer linked to question
  */
 @Entity(tableName = "answer")
 data class Answer(

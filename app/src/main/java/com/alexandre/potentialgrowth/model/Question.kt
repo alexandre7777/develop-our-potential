@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 /**
- * Object to store item to learn
+ * Object to store question linked to answer and learn item
  * type 1 = one choice
  * type 2 = multi choices
  * type 3 = open answer
