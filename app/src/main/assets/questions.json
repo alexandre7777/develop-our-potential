@@ -1,0 +1,37 @@
+[
+  {
+    "id_question":1,
+    "id_learn_item":1,
+    "label":"Have you learn something new today ?",
+    "order":1,
+    "type":1
+  },
+  {
+    "id_question":2,
+    "id_learn_item":1,
+    "label":"What did you learn today ?",
+    "order":2,
+    "type":3
+  },
+  {
+    "id_question":3,
+    "id_learn_item":2,
+    "label":"Did you make personal attack today ?",
+    "order":1,
+    "type":1
+  },
+  {
+    "id_question":4,
+    "id_learn_item":2,
+    "label":"Did you make threats today ?",
+    "order":2,
+    "type":1
+  },
+  {
+    "id_question":5,
+    "id_learn_item":3,
+    "label":"Who did you call today ?",
+    "order":1,
+    "type":2
+  }
+]
