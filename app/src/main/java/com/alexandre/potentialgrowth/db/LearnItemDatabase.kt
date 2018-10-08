@@ -16,7 +16,7 @@ import java.io.InputStreamReader
  * Database schema that holds the list of repos.
  */
 @Database(
-        entities = [LearnItem::class, Contribution::class, Dairy::class, Quote::class],
+        entities = [LearnItem::class, Contribution::class, Dairy::class, Quote::class, Question::class, Answer::class],
         version = 1,
         exportSchema = false
 )
@@ -27,6 +27,8 @@ abstract class LearnItemDatabase : RoomDatabase() {
     abstract fun contributionDao() : ContributionDao
     abstract fun dairyDao() : DairyDao
     abstract fun quoteDao() : QuoteDao
+    abstract fun questionDao() : QuestionDao
+    abstract fun answerDao() : AnswerDao
 
     companion object {
 
@@ -52,9 +54,21 @@ abstract class LearnItemDatabase : RoomDatabase() {
                                 val listType = object : TypeToken<ArrayList<LearnItem>>() {}.type
                                 val result : ArrayList<LearnItem> = Gson().fromJson(reader, listType)
 
+                                val inputStreamQuestion = context.applicationContext.assets.open("questions.json")
+                                val readerQuestion = InputStreamReader(inputStreamQuestion, "UTF-8")
+                                val listTypeQuestion = object : TypeToken<ArrayList<Question>>() {}.type
+                                val resultQuestion : ArrayList<Question> = Gson().fromJson(readerQuestion, listTypeQuestion)
+
+                                val inputStreamAnswer = context.applicationContext.assets.open("answers.json")
+                                val readerAnswer = InputStreamReader(inputStreamAnswer, "UTF-8")
+                                val listTypeAnswer = object : TypeToken<ArrayList<Answer>>() {}.type
+                                val resultAnswer : ArrayList<Answer> = Gson().fromJson(readerAnswer, listTypeAnswer)
+
                                 //insert result in db
                                 ioThread {
                                     getInstance(context).learnItemDao().insertAll(result)
+                                    getInstance(context).questionDao().insertAll(resultQuestion)
+                                    getInstance(context).answerDao().insertAll(resultAnswer)
                                 }
                             }
                         })
